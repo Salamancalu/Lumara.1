@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoración | Lumara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-area">
+                <img src="logo-lumara.png" alt="Lumara Logo" class="main-logo">
+                <div class="brand-text">
+                    <span class="brand-name">Lumara</span>
+                    <span class="slogan">LUZ Y AROMA QUE ABRAZAN</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#catalogo">Colecciones</a>
+                <a href="index.html#pedido">Hacer Pedido</a>
+                <a href="https://wa.me/573138304249" class="wa-pill" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+                    <span>WhatsApp</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <a href="index.html#catalogo" class="back-link">
+            <span class="arrow">←</span> Volver al Catálogo
+        </a>
+        <br><br>
+        <span class="badge">COLECCIÓN</span>
+        <h1>Decoración Minimalista</h1>
+        <p>Velas de diseño que transforman tus espacios en santuarios de paz.</p>
+    </section>
+
+    <section class="product-grid-section">
+        <div class="product-grid">
+            <div class="product-card-detail">
+                <div class="prod-img-wrap">
+                    <img src="vela-burbuja.jpg" alt="Vela Burbuja">
+                </div>
+                <div class="prod-info">
+                    <h3>Vela Burbuja Clásica</h3>
+                    <p>Cera de soja premium, aroma a Vainilla & Coco.</p>
+                    <span class="price">$35.000</span>
+                    <a href="#pedido-seccion" class="btn-buy">Pedir ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card-detail">
+                <div class="prod-img-wrap">
+                    <img src="vela-escultura.jpg" alt="Vela Escultura">
+                </div>
+                <div class="prod-info">
+                    <h3>Escultura Femenina</h3>
+                    <p>Diseño artístico, aroma a Lino fresco.</p>
+                    <span class="price">$42.000</span>
+                    <a href="#pedido-seccion" class="btn-buy">Pedir ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card-detail">
+                <div class="prod-img-wrap">
+                    <img src="vela-nudo.jpg" alt="Vela Nudo">
+                </div>
+                <div class="prod-info">
+                    <h3>Vela Nudo Minimal</h3>
+                    <p>Acento moderno para estanterías.</p>
+                    <span class="price">$38.000</span>
+                    <a href="#pedido-seccion" class="btn-buy">Pedir ahora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pedido-seccion" class="order-section">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Inicia tu Pedido</h2>
+                <p>"Cada vela es especial. Para dedicarle el tiempo que merece, por favor solicita tu pedido con al menos XX días de anticipación."</p>
+            </div>
+
+            <form id="lumara-form">
+                <div class="form-block">
+                    <div class="block-title"><span>1</span> Datos de Contacto</div>
+                    <div class="input-grid">
+                        <div class="field">
+                            <label>Nombre completo</label>
+                            <input type="text" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="field">
+                            <label>WhatsApp</label>
+                            <input type="tel" name="whatsapp" placeholder="313..." required>
+                        </div>
+                        <div class="field">
+                            <label>Correo Electrónico</label>
+                            <input type="tel" name="whatsapp" placeholder="tucorreo@" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-block">
+                    <div class="block-title"><span>2</span> Selecciona Categoría</div>
+                    <div class="category-selector-grid">
+                        <label class="radio-card">
+                            <input type="radio" name="categoria" value="decoracion" onclick="showProducts('decoracion')">
+                            <div class="radio-box">Decoración</div>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="categoria" value="eventos" onclick="showProducts('eventos')">
+                            <div class="radio-box">Eventos</div>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="categoria" value="regalos" onclick="showProducts('regalos')">
+                            <div class="radio-box">Regalos</div>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="categoria" value="personalizada" onclick="showProducts('personalizada')">
+                            <div class="radio-box">Personalizada</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="productos-dinamicos" class="form-block" style="display: none;">
+                    <div class="block-title"><span>3</span> Cantidades</div>
+                    
+                    <div id="list-decoracion" class="product-list" style="display: none;">
+                        <div class="product-item"><span>🕯️ Vela Burbuja</span> <input type="number" min="0" placeholder="0"></div>
+                        <div class="product-item"><span>🕯️ Vela Escultura</span> <input type="number" min="0" placeholder="0"></div>
+                        <div class="product-item"><span>🕯️ Vela Nudo</span> <input type="number" min="0" placeholder="0"></div>
+                    </div>
+
+                    <div id="list-eventos" class="product-list" style="display: none;">
+                        <div class="product-item"><span>🎁 Recordatorio Jar</span> <input type="number" min="0" placeholder="0"></div>
+                        <div class="product-item"><span>🎁 Pack Boda</span> <input type="number" min="0" placeholder="0"></div>
+                    </div>
+
+                    <div id="list-regalos" class="product-list" style="display: none;">
+                        <div class="product-item"><span>💝 Box Relax</span> <input type="number" min="0" placeholder="0"></div>
+                        <div class="product-item"><span>💝 Kit Meditación</span> <input type="number" min="0" placeholder="0"></div>
+                    </div>
+                </div>
+
+                <div class="form-block">
+                    <div class="block-title"><span>4</span> Detalles Especiales</div>
+                    <textarea name="observaciones" rows="4" placeholder="Especifica aromas o detalles para pedidos personalizados..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Pedido</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer-lumara">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <span class="brand-name">Lumara</span>
+                <p class="legal-badge">Contamos con</p>
+                <p class="legal-badge">🧾 Factura Electrónica</p>
+                <p class="legal-badge">🏢 Cámara de Comercio</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Sobre Nosotros</h3>
+                <p>Soluciones de bienestar a través de aromas que abrazan.</p>
+                <div class="social-row">
+                    <a href="#" class="social-item"><img src="ig-icon.png" alt="IG"></a>
+                    <a href="#" class="social-item"><img src="tk-icon.png" alt="TK"></a>
+                    <a href="#" class="social-item"><img src="wa-icon.png" alt="WA"></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Nuestras Políticas</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Reembolso</a></li>
+                    <li><a href="#">Envíos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Más Información</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Nuestros Aromas</a></li>
+                    <li><a href="#">Cuidado de Velas</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-credits">
+            <p>Copyright © 2026 Lumara – Todos los derechos reservados | Bogotá, Colombia</p>
+        </div>
+    </footer>
+
+    <script>
+        function showProducts(category) {
+            const container = document.getElementById('productos-dinamicos');
+            container.style.display = (category === 'personalizada') ? 'none' : 'block';
+
+            const lists = ['list-decoracion', 'list-eventos', 'list-regalos'];
+            lists.forEach(id => {
+                const el = document.getElementById(id);
+                if(el) el.style.display = 'none';
+            });
+
+            if (category !== 'personalizada') {
+                const activeList = document.getElementById('list-' + category);
+                if(activeList) activeList.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

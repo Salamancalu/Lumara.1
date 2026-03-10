@@ -1,0 +1,68 @@
+:root {
+    --burgundy: #6b1414;
+    --gold: #b8935a;
+    --cream: #f8f6f2;
+    --white: #ffffff;
+    --dark: #1a1a1a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--dark); }
+
+/* Header */
+.cat-header { background: var(--white); padding: 60px 5%; text-align: center; border-bottom: 1px solid #eee; }
+.btn-back { text-decoration: none; color: var(--gold); font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; }
+.cat-header h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--burgundy); margin-top: 15px; }
+.separator { width: 60px; height: 3px; background: var(--gold); margin: 20px auto; }
+
+/* Grid de Productos */
+.product-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 40px; 
+    padding: 60px 8%; 
+    max-width: 1300px; 
+    margin: 0 auto; 
+}
+
+/* Tarjeta de Producto */
+.product-item { 
+    background: var(--white); 
+    border-radius: 5px; 
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    transition: 0.4s;
+    border: 1px solid #f0f0f0;
+}
+
+.product-item:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+.product-img-container { width: 100%; height: 350px; overflow: hidden; cursor: zoom-in; }
+.product-img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.product-item:hover .product-img-container img { transform: scale(1.1); }
+
+.product-info { padding: 25px; text-align: center; }
+.product-info h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--burgundy); margin-bottom: 10px; }
+.product-info p { font-size: 0.85rem; color: #666; line-height: 1.6; margin-bottom: 15px; height: 45px; overflow: hidden; }
+.product-price { display: block; font-size: 1.2rem; font-weight: 700; color: var(--gold); margin-bottom: 20px; }
+
+.btn-buy { 
+    display: inline-block; 
+    padding: 12px 30px; 
+    border: 1px solid var(--burgundy); 
+    color: var(--burgundy); 
+    text-decoration: none; 
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    letter-spacing: 1px; 
+    transition: 0.3s;
+}
+
+.btn-buy:hover { background: var(--burgundy); color: white; }
+
+/* Modal */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); padding-top: 50px; }
+.modal-content { margin: auto; display: block; width: 80%; max-width: 600px; border: 5px solid white; }
+.close-modal { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; }
+
+.cat-footer { padding: 40px; text-align: center; font-size: 0.8rem; color: var(--gray); }
