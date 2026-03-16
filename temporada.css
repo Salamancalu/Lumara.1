@@ -1,3 +1,60 @@
+
+/* --- DISEÑO RESPONSIVO PARA TODO EL SITIO (INDEX Y SECCIONES) --- */
+
+@media (max-width: 768px) {
+    /* 1. Ajuste del Contenedor Principal (Grid) */
+    .product-grid, 
+    .categories-grid, 
+    .grid-container { 
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Una sola columna en móvil */
+        gap: 20px !important;
+        padding: 15px !important;
+    }
+
+    /* 2. Ajuste de las Tarjetas */
+    .product-card, 
+    .category-card {
+        width: 100% !important;
+        min-height: auto !important;
+        margin-bottom: 10px;
+    }
+
+    /* 3. Ajuste de Imágenes */
+    .image-container, 
+    .card-image,
+    .lumara-carousel {
+        height: 250px !important; /* Un poco más bajas para que no ocupen toda la pantalla */
+    }
+
+    /* 4. Tipografía: Reducir títulos para que no se corten */
+    h1 {
+        font-size: 1.8rem !important;
+        padding: 0 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* 5. El Menú de Navegación (Header) */
+    /* Esto evita que los enlaces se amontonen */
+    nav ul {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        padding: 20px 0 !important;
+    }
+
+    /* 6. El Banner o Hero del Index */
+    .hero-section {
+        height: 60vh !important; /* Más pequeño en celular */
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+
 /* ==========================================================================
    1. VARIABLES Y BASE
    ========================================================================== */
