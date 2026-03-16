@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumara | Luz y Aroma que Abrazan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header class="navbar">
@@ -37,7 +41,7 @@
             <p>Velas artesanales con cera de soja premium. Personaliza cada detalle de tu pedido.</p>
             <div class="hero-btns">
                 <a href="#catalogo" class="btn btn-gold">Explorar Tienda</a>
-                <a href="#pedido" class="btn btn-outline">Ir al Pedido</a>
+                <a href="decorativa.html" class="btn btn-outline">Ir al Pedido</a>
             </div>
         </div>
         <div class="hero-visual">
@@ -49,35 +53,38 @@
             </div>
         </div>
     </section>
- 
+
     <section id="catalogo" class="catalog">
         <h2 class="section-title">Nuestras Colecciones</h2>
         <div class="categories-container">
+
             <div class="category-card">
-                <div class="cat-img" style="background-image: url('img-decoracion.jpg');"></div>
+                <div class="cat-img" style="background-image: url('imagenes/Decorativa y Sensorial.png');"></div>
                 <div class="cat-info">
-                    <h3>Decoración</h3>
-                    <p>Velas para embellecer tu hogar.</p>
-                    <a href="decoracion.html" class="btn-cat">Ver Colección</a>
+                    <h3>Decorativa y Sensorial</h3>
+                    <p>Diseñados para el hogar, el bienestar personal y el deleite visual.</p>
+                    <a href="decorativa.html" class="btn-cat">Ver Colección</a>
                 </div>
             </div>
+
             <div class="category-card">
-                <div class="cat-img" style="background-image: url('img-eventos.jpg');"></div>
+                <div class="cat-img" style="background-image: url('imagenes/Decorativa y Sensorial.png');"></div>
                 <div class="cat-info">
-                    <h3>Eventos</h3>
-                    <p>Detalles para fechas especiales.</p>
+                    <h3>Eventos y Momentos Especiales</h3>
+                    <p>Enfocados en celebraciones específicas, regalos para terceros y presencia de marca.</p>
                     <a href="eventos.html" class="btn-cat">Ver Colección</a>
                 </div>
             </div>
+
             <div class="category-card">
-                <div class="cat-img" style="background-image: url('img-regalos.jpg');"></div>
+                <div class="cat-img" style="background-image: url('imagenes/Decorativa y Sensorial.png');"></div>
                 <div class="cat-info">
-                    <h3>Regalos</h3>
-                    <p>Cajas curadas para sorprender.</p>
-                    <a href="regalos.html" class="btn-cat">Ver Colección</a>
+                    <h3>Fechas de Temporada y Espiritualidad</h3>
+                    <p>Colecciones específicas del calendario y en el uso ritual o simbólico de las velas.</p>
+                    <a href="temporada.html" class="btn-cat">Ver Colección</a>
                 </div>
             </div>
-            <a href="#verTodo" class="btn btn-gold">Ver todo</a>
+
         </div>
     </section>
 
@@ -85,37 +92,35 @@
         <div class="form-container">
             <div class="form-header">
                 <h2>Formulario de Pedido</h2>
-                <p>¡Cotiza tu pedido aquí! Cada una de nuestras velas se elabora a mano con dedicación, por lo que agradecemos tu solicitud anticipada. ¿Lo necesitas en menos de 15 días? Escríbenos por WhatsApp; haremos lo posible por darte una atención prioritaria.</p>
+                <p>¡Cotiza tu pedido aquí! Cada una de nuestras velas se elabora a mano con dedicación.</p>
             </div>
 
-            <form id="lumara-form">
+            <form id="lumara-form"
+                action="https://script.google.com/macros/s/AKfycbyXKoO1j0jB86l4303hx8iAHmaSDSlbwB7p09s8OtyvmfCqDyS-DnFpuV3d4gm1bo3w/exec"
+                method="POST">
+
                 <div class="form-block">
-                    <div class="block-title"><span>1</span> Datos de Contacto</div>
+                    <div class="block-title"><span>1</span> Información Personal</div>
                     <div class="input-grid">
                         <div class="field">
-                            <label>Nombre</label>
-                            <input type="text" name="nombre" required>
+                            <label for="nombre">NOMBRE COMPLETO</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                         </div>
                         <div class="field">
-                            <label>WhatsApp</label>
-                            <input type="tel" name="whatsapp" required>
+                            <label for="whatsapp">WHATSAPP</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ej: 311..." required>
                         </div>
                         <div class="field">
-                            <label>Email</label>
-                            <input type="email" name="email">
+                            <label for="direccion">DIRECCIÓN DE ENTREGA</label>
+                            <input type="text" id="direccion" name="direccion" required>
                         </div>
                         <div class="field">
-                            <label>Direccion</label>
-                            <input type="email" name="email">
-                        </div>
-                        <div class="field">
-                            <label>¿Deseas Factura Electrónica?</label>
+                            <label>¿DESEAS FACTURA ELECTRÓNICA?</label>
                             <div class="options-group">
-                                <label for="factura_si">Sí</label>
-                                <input type="radio" id="factura_si" name="factura" value="si">
-                                
-                                <label for="factura_no">No</label>
-                                <input type="radio" id="factura_no"name="factura" value="no"checked>
+                                <label class="radio-item"><input type="radio" name="factura" value="si">
+                                    <span>SÍ</span></label>
+                                <label class="radio-item"><input type="radio" name="factura" value="no" checked>
+                                    <span>NO</span></label>
                             </div>
                         </div>
                     </div>
@@ -123,103 +128,134 @@
 
                 <div class="form-block">
                     <div class="block-title"><span>2</span> Selecciona Categoría</div>
-                    <div class="category-selector-grid">
-                        <label class="radio-card">
-                            <input type="radio" name="categoria" value="decoracion" onclick="showProducts('decoracion')">
-                            <div class="radio-box">Decoración</div>
-                        </label>
-                        <label class="radio-card">
-                            <input type="radio" name="categoria" value="eventos" onclick="showProducts('eventos')">
-                            <div class="radio-box">Eventos</div>
-                        </label>
-                        <label class="radio-card">
-                            <input type="radio" name="categoria" value="regalos" onclick="showProducts('regalos')">
-                            <div class="radio-box">Regalos</div>
-                        </label>
-                        <label class="radio-card">
-                            <input type="radio" name="categoria" value="personalizada" onclick="showProducts('personalizada')">
-                            <div class="radio-box">Personalizada</div>
-                        </label>
+                    <div class="category-selector-grid" id="category-grid">
                     </div>
                 </div>
 
                 <div id="productos-dinamicos" class="form-block" style="display: none;">
-                    <div class="block-title"><span>3</span> Cantidades</div>
-                    
-                    <div id="list-decoracion" class="product-list" style="display: none;">
-                        <div class="product-item"><span>🕯️ Vela Burbuja</span><input type="number" name="cant_burbuja" min="0"></div>
-                        <div class="product-item"><span>🕯️ Vela Escultura</span> <input type="number" name="cant_escultura" min="0"></div>
-                    </div>
-
-                    <div id="list-eventos" class="product-list" style="display: none;">
-                        <div class="product-item"><span>🎁 Mini Jar</span> <input type="number" name="cant_jar" min="0"></div>
-                        <div class="product-item"><span>🎁 Vela de Té</span> <input type="number" name="cant_te" min="0"></div>
-                    </div>
-
-                    <div id="list-regalos" class="product-list" style="display: none;">
-                        <div class="product-item"><span>💝 Box Relax</span> <input type="number" name="cant_box" min="0"></div>
-                    </div>
+                    <div class="block-title"><span>3</span> Personaliza tu Selección</div>
+                    <div id="container-subcategorias"></div>
                 </div>
+
                 <div class="form-block">
                     <div class="block-title"><span>4</span> Observaciones</div>
-                    <textarea name="observaciones" rows="4"></textarea>
+                    <textarea name="observaciones" rows="4"
+                        placeholder="Detalles sobre colores, aromas o personalización..."></textarea>
                 </div>
-                <div class="form-block">
-                    <div class="block-title"> Envios </div>
-                    <p> Envíos a Bogotá: $10.000.<br>Envíos Nacionales: El costo es asumido por el cliente bajo la modalidad "pago contra entrega" directamente a la transportadora.</p>
+
+                <div class="form-block payment-methods">
+                    <div class="block-title">
+                        <span>5<i class="fas fa-credit-card"></i></span>
+                        <h3>Métodos de Pago</h3>
+                    </div>
+
+                    <div class="payment-grid">
+                        <div class="payment-card nequi">
+                            <div class="card-header">
+                                <span class="bank-name">NEQUI</span>
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="card-number">311 491 6142</div>
+                            <p class="card-label">Número de cuenta</p>
+                        </div>
+
+                        <div class="payment-card bancolombia">
+                            <div class="card-header">
+                                <span class="bank-name">BANCOLOMBIA</span>
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="card-number">912-049051-40</div>
+                            <p class="card-label">Ahorros</p>
+                        </div>
+                    </div>
+
+                    <p class="payment-note">
+                        * Una vez nos comuniquemos contigo confirmaremos tu pedido y metodo de pago.
+                    </p>
                 </div>
-                <button type="submit" class="btn-submit" id="submit-btn">Enviar Pedido</button>
+                <div class="form-actions" style="text-align: center;">
+                    <button type="submit" id="submit-btn" class="btn btn-gold"
+                        style="width: 100%; padding: 15px;">ENVIAR PEDIDO</button>
+                </div>
+
             </form>
         </div>
     </section>
+
+    <div id="modal-resumen" class="modal-overlay"
+        style="display: none; background: rgba(0,0,0,0.6); position: fixed; top: 0; left: 0; width: 100%; height: 100%; justify-content: center; align-items: center; z-index: 1000;">
+        <div class="modal-content"
+            style="background: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;">
+            <h2 style="font-family: 'Playfair Display', serif; color: #b8935a; margin-bottom: 15px;">Resumen de tu
+                Pedido</h2>
+            <div id="resumen-contenido"
+                style="text-align: left; margin-bottom: 20px; font-size: 14px; line-height: 1.6; border-top: 1px solid #eee; padding-top: 15px;">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="cerrarResumen()"
+                    style="flex: 1; padding: 10px; border: 1px solid #ccc; background: white; border-radius: 5px; cursor: pointer;">Editar</button>
+                <button onclick="confirmarYEnviar()" id="btn-confirmar-final"
+                    style="flex: 2; padding: 10px; background: #b8935a; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Confirmar
+                    y Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 
     <footer class="footer-lumara">
         <div class="footer-container">
             <div class="footer-col brand-col">
                 <span class="brand-name">Lumara</span>
-                <p class="legal-badge">Contamos con</p>
-                <p class="legal-badge">🧾 Factura Electrónica</p>
-                <p class="legal-badge">🏢 Cámara de Comercio</p>
-            </div>
-
-            <div class="footer-col">
-                <h3>Sobre Nosotros</h3>
-                <p>Soluciones de bienestar a través de aromas que abrazan.</p>
-                <div class="social-row">
-                    <a href="#" class="social-item"><img src="ig-icon.png" alt="IG"></a>
-                    <a href="#" class="social-item"><img src="tk-icon.png" alt="TK"></a>
-                    <a href="#" class="social-item"><img src="wa-icon.png" alt="WA"></a>
-                    <a href="#" class="social-item"><img src="wa-icon.png" alt="FA"></a>
+                <p class="slogan-footer">Luz y aroma que abrazan</p>
+                <div class="legal-info">
+                    <p class="legal-badge">🧾 Factura Electrónica</p>
+                    <p class="legal-badge">🏢 Registro de Comercio</p>
                 </div>
             </div>
 
             <div class="footer-col">
-                <h3>Nuestras Políticas</h3>
+                <h3>Políticas</h3>
                 <ul class="footer-links">
                     <li><a href="#">Privacidad</a></li>
                     <li><a href="#">Términos y Condiciones</a></li>
-                    <li><a href="#">Reembolso</a></li>
-                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Envíos y Devoluciones</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h3>Más Información</h3>
+                <h3>Ayuda</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Unicación</a></li>
                     <li><a href="#">Cuidado de Velas</a></li>
                     <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Contacto</a></li>
                 </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Síguenos</h3>
+                <div class="social-row">
+                    <a href="#" class="social-item"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+                            alt="Instagram"></a>
+                    <a href="https://wa.me/573114916142" class="social-item"><img
+                            src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+                    <a href="https://www.facebook.com/TU_PERFIL" class="social-item" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+                    </a>
+
+                    <a href="https://www.tiktok.com/@TU_USUARIO" class="social-item" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+                    </a>
+                </div>
+                <p class="location-text">📍 Bogotá, Colombia</p>
             </div>
         </div>
 
         <div class="footer-credits">
-            <p>Copyright © 2026 Lumara – Todos los derechos reservados | Bogotá, Colombia</p>
+            <p>Copyright © 2026 **Lumara** – Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-
 </body>
+
 </html>

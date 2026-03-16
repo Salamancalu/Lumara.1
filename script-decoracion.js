@@ -1,65 +1,96 @@
-// LISTA DE PRODUCTOS (Aquí subes tus velas)
-const misVelas = [
-    {
-        nombre: "Vela Burbuja XL",
-        descripcion: "Cera de soja premium con aroma a lavanda y vainilla.",
-        precio: "$35.000",
-        imagen: "https://images.unsplash.com/photo-1602872030219-3df6381463bd?auto=format&fit=crop&q=80&w=500"
-    },
-    {
-        nombre: "Copa Luxury Gold",
-        descripcion: "Elegante envase de vidrio con detalles en pan de oro.",
-        precio: "$55.000",
-        imagen: "https://images.unsplash.com/photo-1603006905393-d4642682464b?auto=format&fit=crop&q=80&w=500"
-    },
-    {
-        nombre: "Vela Escultura Atenea",
-        descripcion: "Diseño arquitectónico hecho a mano para decoración.",
-        precio: "$48.000",
-        imagen: "https://images.unsplash.com/photo-1570823635306-250abb06d4b3?auto=format&fit=crop&q=80&w=500"
-    }
-];
+/* ==========================================================================
+   LUMARA - SCRIPT INTEGRADO (CARRUSEL + FORMULARIO + MODAL)
+   ========================================================================== */
 
-// Función para cargar los productos en el HTML
-const container = document.getElementById('product-container');
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyXKoO1j0jB86l4303hx8iAHmaSDSlbwB7p09s8OtyvmfCqDyS-DnFpuV3d4gm1bo3w/exec';
+const form = document.getElementById('lumara-form');
+const modalExito = document.getElementById('modal-exito');
 
-misVelas.forEach(vela => {
-    const card = document.createElement('div');
-    card.className = 'product-item';
-    
-    card.innerHTML = `
-        <div class="product-img-container">
-            <img src="${vela.imagen}" alt="${vela.nombre}" class="img-vela">
-        </div>
-        <div class="product-info">
-            <h3>${vela.nombre}</h3>
-            <p>${vela.descripcion}</p>
-            <span class="product-price">${vela.precio}</span>
-            <a href="index.html#pedido" class="btn-buy">HACER PEDIDO</a>
-        </div>
-    `;
-    container.appendChild(card);
+// --- 1. MOVIMIENTO AUTOMÁTICO DE CARRUSELES ---
+document.addEventListener('DOMContentLoaded', () => {
+    const carruseles = document.querySelectorAll('.lumara-carousel');
+
+    carruseles.forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const imagenes = track.querySelectorAll('img');
+        let indiceActual = 0;
+
+        function moverSiguiente() {
+            indiceActual++;
+            if (indiceActual >= imagenes.length) {
+                indiceActual = 0;
+            }
+            const desplazamiento = -(indiceActual * 100);
+            track.style.transform = `translateX(${desplazamiento}%)`;
+        }
+
+        // Cambia la imagen cada 3.5 segundos automáticamente
+        setInterval(moverSiguiente, 2000);
+    });
 });
 
-// Lógica del Modal (Ampliar Imagen)
-const modal = document.getElementById("product-modal");
-const modalImg = document.getElementById("img-ampliada");
-const span = document.getElementsByClassName("close-modal")[0];
+// --- 2. LÓGICA DEL FORMULARIO Y ENVÍO ---
+if (form) {
+    form.addEventListener('submit', e => {
+        e.preventDefault(); // Evita que la página se recargue
+        
+        // Feedback visual en el botón
+        const btn = document.getElementById('submit-btn');
+        const originalText = btn.innerText;
+        btn.innerText = 'Enviando...';
+        btn.disabled = true;
 
-document.querySelectorAll('.img-vela').forEach(img => {
-    img.onclick = function() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-    }
-});
-
-span.onclick = function() { 
-    modal.style.display = "none"; 
+        fetch(scriptURL, { 
+            method: 'POST', 
+            body: new FormData(form),
+            mode: 'no-cors' // Necesario para Google Apps Script
+        })
+        .then(() => {
+            // Éxito: Restaurar botón, limpiar y mostrar ventana emergente
+            btn.innerText = originalText;
+            btn.disabled = false;
+            form.reset(); 
+            modalExito.style.display = 'flex'; // Muestra la ventana de Pedido Recibido
+            
+            // Ocultar sección de productos dinámica después del reset
+            document.getElementById('productos-dinamicos').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert('Hubo un error al enviar el pedido. Por favor, intenta de nuevo.');
+            btn.innerText = originalText;
+            btn.disabled = false;
+        });
+    });
 }
 
-// Cerrar modal al hacer clic fuera de la imagen
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+// --- 3. FUNCIONES GLOBALES (CATEGORÍAS Y MODAL) ---
+
+// Función para cerrar la ventana emergente
+function cerrarModal() {
+    modalExito.style.display = 'none';
+}
+
+// Función para mostrar productos según la categoría seleccionada
+function showProducts(categoria) {
+    const contenedorDinamico = document.getElementById('productos-dinamicos');
+    
+    // Si la categoría es válida, mostrar el contenedor
+    if (categoria !== 'personalizada') {
+        contenedorDinamico.style.display = 'block';
+    } else {
+        contenedorDinamico.style.display = 'none';
+    }
+
+    // Ocultar todas las listas de cantidades
+    document.getElementById('list-decoracion').style.display = 'none';
+    document.getElementById('list-eventos').style.display = 'none';
+    document.getElementById('list-regalos').style.display = 'none';
+    
+    // Mostrar solo la lista que corresponde a la categoría
+    const listId = 'list-' + categoria;
+    const targetList = document.getElementById(listId);
+    if (targetList) {
+        targetList.style.display = 'block';
     }
 }

@@ -702,6 +702,65 @@ textarea[name="observaciones"] {
     color: #999;
 }
 
+/* Estilos para los artículos de productos que ya tienes */
+
+/* 1. Asegurar la estructura de 4 niveles */
+.product-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important; /* Deja que crezca según el contenido */
+    min-height: 550px !important; 
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* 2. NIVEL 1: La Imagen (grande y limpia) */
+.image-container.lumara-carousel {
+    height: 350px !important; /* Espacio generoso para la foto */
+    width: 100% !important;
+    position: relative !important; /* Evita que el texto se suba */
+    order: 1;
+}
+
+.carousel-track img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* 3. NIVELES 2, 3 y 4: Nombre, Precio y Botón */
+.front-info {
+    order: 2;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important; /* Espacio entre el nombre y el precio */
+    background: #fff !important;
+    text-align: center;
+}
+
+/* Estilo para el nombre (Nivel 2) */
+.front-info h3 {
+    margin: 0 !important;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Estilo para el precio (Nivel 3) */
+.front-info .price {
+    font-weight: bold;
+    color: #b08d57; /* El tono dorado de Lumara */
+    margin-bottom: 10px;
+}
+
+/* Estilo para el botón (Nivel 4) */
+.front-info .btn-pedir {
+    width: 100% !important;
+    align-self: center;
+}
+
+
 /* ==========================================================================
    7. RESPONSIVO
    ========================================================================== */
