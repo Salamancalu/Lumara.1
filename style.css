@@ -113,6 +113,109 @@ body {
     filter: brightness(0) invert(1);
 }
 
+
+/** hamburguesa */
+
+/* --- ESTILOS GENERALES (BASE) --- */
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 100;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 22px;
+    /* Más corta para ser minimalista */
+    height: 2px;
+    /* Más delgada */
+    margin: 5px auto;
+    background-color: #d4af37;
+    transition: all 0.3s ease;
+}
+
+/* --- MEDIA QUERY PARA CELULARES (DISEÑO MINIMALISTA Y SUAVE) --- */
+@media screen and (max-width: 768px) {
+
+    .main-slogan {
+        display: none !important;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 5%;
+        width: 90%;
+
+        /* Efecto Vidrio Premium (Glassmorphism) */
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        border-radius: 20px;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        box-shadow: 0 10px 30px rgba(139, 90, 43, 0.15);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        gap: 25px;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 90;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* --- ARREGLO DE TIPOGRAFÍA (A SERIF) --- */
+    .nav-links a {
+        /* Esta es la clave: cambia 'uppercase' por 'capitalize' */
+        text-transform: capitalize;
+
+        /* También asegúrate de que el peso de la letra sea ligero */
+        font-weight: 400;
+    }
+
+
+
+    /* Animación del botón hamburguesa */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+
+
+
+
+
+
+
+
 /* ==========================================================================
    3. HERO (ESTILO BORGOÑA: image_bb5703)
    ========================================================================== */
@@ -875,7 +978,7 @@ textarea[name="observaciones"] {
    ========================================================================== */
 @media (max-width: 768px) {
 
-    
+
     @media (max-width: 768px) {
 
         .category-selector-grid {
@@ -948,8 +1051,3 @@ textarea[name="observaciones"] {
     .section-title {
         font-size: 2rem !important;
     }
-
-
-
-
-   

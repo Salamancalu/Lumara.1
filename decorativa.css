@@ -340,15 +340,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(28, 28, 28, 0.85);
-    /* Un gris casi negro más elegante */
+    background: rgba(28, 28, 28, 0.9); /* Un toque más opaco para legibilidad */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 20px; /* Reducido un poco para dar aire al contenido */
     color: #fdfdfd !important;
     text-align: center;
     z-index: 50;
@@ -360,32 +359,62 @@ body {
 /* Título interno de la descripción */
 .back-content::before {
     content: "DETALLES";
+    display: block;
     font-size: 0.7rem;
     letter-spacing: 3px;
-    color: var(--gold);
-    /* Asegúrate de tener definida esta variable o usa #d4af37 */
-    margin-bottom: 10px;
+    color: var(--gold, #d4af37);
+    margin-bottom: 15px;
     border-bottom: 1px solid rgba(212, 175, 55, 0.3);
     padding-bottom: 5px;
+    width: 60%; /* Línea decorativa centrada */
 }
 
 .description {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-weight: 400;
-    font-style: italic;
-    /* Le da un toque más artesanal */
-    color: #e0e0e0;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
+/* Contenedor de lista para controlar el scroll interno */
+.details-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-/* Añadiendo un pequeño detalle decorativo antes de cada dato */
+.details-list p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+/* Ajuste específico para el párrafo de AROMAS (el último) */
+.details-list p:last-child {
+    max-height: 70px; /* Altura máxima controlada */
+    overflow-y: auto; /* Scroll si hay muchos aromas */
+    padding: 0 5px;
+    text-align: center;
+}
+
+/* Detalle decorativo antes de cada dato */
 .details-list p::before {
-    content: "✦";
-    color: var(--gold);
+    content: "✦ ";
+    color: var(--gold, #d4af37);
     font-size: 0.7rem;
+    margin-right: 5px;
+}
+
+/* --- Estilo de la barra de scroll para no romper la estética --- */
+.details-list p:last-child::-webkit-scrollbar {
+    width: 3px;
+}
+.details-list p:last-child::-webkit-scrollbar-thumb {
+    background: var(--gold, #d4af37);
+    border-radius: 10px;
 }
 
 /* Activación del efecto */
@@ -397,6 +426,8 @@ body {
 .product-item.active .carrusel-fotos {
     filter: blur(8px) brightness(0.5);
 }
+
+
 
 /* 5. BLOQUE DE INFORMACIÓN (Blanco y compacto) */
 .product-info-block {

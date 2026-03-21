@@ -2,25 +2,24 @@
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyXKoO1j0jB86l4303hx8iAHmaSDSlbwB7p09s8OtyvmfCqDyS-DnFpuV3d4gm1bo3w/exec';
 
 const fragancias = [
-    "Mango", "Sándalo", "Lavanda", "Coco", "Bambú", "Jazmín", 
-    "Chocolate", "Galleta", "Maracuyá", "Frutos rojos", "Vainilla", 
-    "Canela", "Fresas con chocolate", "Coco vainilla", "Baby"
+    "Mango", "Coco", "Chocolate", "Frutos rojos", "Fresas con chocolate", "Sándalo", "Bambú", "Galleta", "Vainilla", "Coco vainilla", "Lavanda", "Jazmín", "Maracuyá", "Canela", "Baby"
 ];
 
 const catalogo = {
     "decorativa": [
-        { sub: "Postres y bebidas", prods: ["VELA ICE COFFEE", "VELA POSTRE frutos rojos", "VELA POSTRE con crema", "VELA copa de helado", "VELA margarita", "VELA Cerveza"] },
+        { sub: "Postres y bebidas", prods: ["Vela Ice Coffee", "Vela Postre frutos rojos", "Vela Postre con crema", "Vela Copa de helado"] },
         { sub: "Waxmelts", prods: ["Guacal rosas con pebetero (Azul)", "Guacal rosas con pebetero (Rosa)"] },
         { sub: "Bouquets", prods: ["Bouquet rosas y margaritas", "Bouquet girasoles y virgen", "Bouquet peonias"] },
-        { sub: "Diseños varios", prods: ["VELA OSO TEDDY", "VELA PERRO BULL DOG", "VELA corazón love"] }
+        { sub: "Masajes y Aromaticas", prods: ["Velas de masaje 90g", "Velas de masaje 60g", "Vela Aromática Margarita"] },
+
     ],
     "eventos": [
-        { sub: "Recordatorios", prods: ["Vela individual margarita", "Vela en envase margarita", "Recordatorio grado"] },
+        { sub: "Recordatorios", prods: ["Vela Margarita", "Vela Ice Coffee", "Vela Cerveza", "Vela Recordatorio Osito", "Vela Recordatorio Grado", "Vela Burbuja 3x3", "Vela Burbuja 2x2", "Vela Arcoiris", "Vela Corazón de Rosas Pequeño", "Vela Rosa REF 001", "Vela Rosa REF 002", "Vela Pequeña León", "Vela Oso de Rosas", "Vela Peonia", "Vela Tulipanes", "Vela Huellita", "Vela Corazón TE AMO", "Vela Mariposa", "Vela Perro Bull Dog"] },
         { sub: "Corporativo", prods: ["Eventos Sociales", "Eventos Corporativos", "Presencia de Marca"] }
     ],
     "temporada": [
-        { sub: "Navideñas", prods: ["VELAS INTENCIONES ONDULADAS X 6", "VELAS INTENCIONES ARBOLITO X 6", "Combo reno y árbol", "VELA ARBOLITO NAVIDEÑO", "VELA PESEBRE COQUETO", "Vela pesebre mediano", "VELA renito"] },
-        { sub: "Espiritualidad", prods: ["VIRGEN", "Vela burbuja 6x6 con hojita", "Rituales Espirituales"] }
+        { sub: "Navideñas", prods: ["Velas Intenciones Onduladas X 6", "Velas Intenciones Arbolito x 6", "Combo reno y árbol", "Vela Arbolito Navideño", "Vela Pesebre Coqueto", "Vela Pesebre Mediano", "Vela Burbuja 6x6 con Hojita", "Vela Renito"] },
+        { sub: "Espiritualidad", prods: ["Virgen Pequeña 6 cm", "Vela Sagrada Familia", "Virgen de Guadalupe 7 cm", "Vela Virgen María con Niño Jesús", "Vela Angelito", "Vela Sagrada Familia Huevo", "Vela Rostro Cristo", "Velón Cristo", "Vela Angelito Mini" ] }
     ]
 };
 
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'category-option';
             card.style.cssText = "border: 1px solid #ddd; padding: 15px; border-radius: 10px; cursor: pointer; text-align: center; transition: 0.3s; background: #fff;";
-            
+
             card.innerHTML = `
                 <div style="font-size: 24px; margin-bottom: 5px;">${cat.icon}</div>
                 <div style="font-size: 13px; font-weight: bold; color: #444;">${cat.nombre}</div>
@@ -69,22 +68,22 @@ function showProducts(categoriaId) {
     const form = document.getElementById('lumara-form');
     const bloqueDinamico = document.getElementById('productos-dinamicos');
     const container = document.getElementById('container-subcategorias');
-    
+
     // --- LÓGICA PARA CAPTURAR LA CATEGORÍA EN EL EXCEL ---
     let catHidden = document.getElementById('cat-hidden');
     if (!catHidden) {
         catHidden = document.createElement('input');
         catHidden.type = 'hidden';
         catHidden.id = 'cat-hidden';
-        catHidden.name = 'categoria_id'; 
+        catHidden.name = 'categoria_id';
         form.appendChild(catHidden);
     }
-    catHidden.value = categoriaId; 
+    catHidden.value = categoriaId;
     // ----------------------------------------------------
 
     if (!bloqueDinamico || !container) return;
 
-    container.innerHTML = ""; 
+    container.innerHTML = "";
     bloqueDinamico.style.display = 'block';
 
     const subcategorias = catalogo[categoriaId];
@@ -129,7 +128,7 @@ function activarInputs(selectElement) {
         aromaSelect.disabled = false;
         aromaSelect.style.background = "#fff";
         cantInput.disabled = false;
-        cantInput.value = 1; 
+        cantInput.value = 1;
     } else {
         aromaSelect.disabled = true;
         aromaSelect.style.background = "#eee";
@@ -150,7 +149,7 @@ function enviarFormulario(e) {
     let productosSeleccionados = "";
     let tieneProductos = false;
 
-    for (let i = 0; i < 20; i++) { 
+    for (let i = 0; i < 20; i++) {
         const producto = formData.get(`Producto_${i}`);
         const cantidad = formData.get(`Cant_${i}`);
         const aroma = formData.get(`Aroma_${i}`);
@@ -189,31 +188,31 @@ function confirmarYEnviar() {
     btnConfirmar.innerText = 'Enviando...';
     btnConfirmar.disabled = true;
 
-    fetch(scriptURL, { 
-        method: 'POST', 
+    fetch(scriptURL, {
+        method: 'POST',
         body: new FormData(form),
-        mode: 'no-cors' 
+        mode: 'no-cors'
     })
-    .then(() => {
-        modalResumen.style.display = 'none';
-        btnConfirmar.innerText = 'Confirmar y Enviar';
-        btnConfirmar.disabled = false;
-        
-        if (modalExito) modalExito.style.display = 'flex';
-        
-        form.reset(); 
-        document.getElementById('productos-dinamicos').style.display = 'none';
-        document.querySelectorAll('.category-option').forEach(el => {
-            el.style.borderColor = "#ddd";
-            el.style.background = "#fff";
+        .then(() => {
+            modalResumen.style.display = 'none';
+            btnConfirmar.innerText = 'Confirmar y Enviar';
+            btnConfirmar.disabled = false;
+
+            if (modalExito) modalExito.style.display = 'flex';
+
+            form.reset();
+            document.getElementById('productos-dinamicos').style.display = 'none';
+            document.querySelectorAll('.category-option').forEach(el => {
+                el.style.borderColor = "#ddd";
+                el.style.background = "#fff";
+            });
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert('Hubo un error de conexión. Intenta de nuevo.');
+            btnConfirmar.innerText = 'Confirmar y Enviar';
+            btnConfirmar.disabled = false;
         });
-    })
-    .catch(error => {
-        console.error('Error!', error.message);
-        alert('Hubo un error de conexión. Intenta de nuevo.');
-        btnConfirmar.innerText = 'Confirmar y Enviar';
-        btnConfirmar.disabled = false;
-    });
 }
 
 function cerrarResumen() {
@@ -225,3 +224,21 @@ function cerrarModal() {
     if (modal) modal.style.display = 'none';
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Al hacer click en la hamburguesa, alterna la clase 'active'
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Opcional: Cerrar el menú automáticamente al hacer click en un enlace
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+});
