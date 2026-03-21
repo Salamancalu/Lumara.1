@@ -677,8 +677,9 @@ textarea[name="observaciones"] {
     background: #ffffff !important;
     padding: 30px !important;
     border-radius: 40px !important;
-    border: 1px solid rgba(184, 147, 90, 0.15); /* Borde dorado muy sutil */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important;
+    border: 1px solid rgba(184, 147, 90, 0.15);
+    /* Borde dorado muy sutil */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
 }
 
 /* 2. Sub-títulos de bloque (Envíos y Cuentas) */
@@ -686,7 +687,8 @@ textarea[name="observaciones"] {
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--gold); /* Color dorado de la marca */
+    color: var(--gold);
+    /* Color dorado de la marca */
     letter-spacing: 1.5px;
     margin-bottom: 20px;
     text-align: center;
@@ -704,7 +706,8 @@ textarea[name="observaciones"] {
 }
 
 .shipping-card {
-    background: var(--cream); /* Fondo crema claro */
+    background: var(--cream);
+    /* Fondo crema claro */
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -720,7 +723,8 @@ textarea[name="observaciones"] {
 }
 
 .ship-icon {
-    font-size: 2rem; /* Icono grande */
+    font-size: 2rem;
+    /* Icono grande */
     color: var(--burgundy);
     flex-shrink: 0;
 }
@@ -755,7 +759,8 @@ textarea[name="observaciones"] {
 /* Separador decorativo */
 .payment-separator {
     border: none;
-    border-top: 2px solid var(--cream); /* Separador sutil */
+    border-top: 2px solid var(--cream);
+    /* Separador sutil */
     margin: 30px 0;
 }
 
@@ -768,7 +773,8 @@ textarea[name="observaciones"] {
 
 /* Actualización de las Tarjetas de Pago */
 .payment-card {
-    background: #fdfdfd; /* Fondo ligeramente diferente para contrastar */
+    background: #fdfdfd;
+    /* Fondo ligeramente diferente para contrastar */
     padding: 25px;
     border-radius: 20px;
     position: relative;
@@ -779,7 +785,7 @@ textarea[name="observaciones"] {
 
 .payment-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Borde lateral de color */
@@ -797,18 +803,23 @@ textarea[name="observaciones"] {
 /* Actualización de los Cabeceros de Tarjeta (Alineación con Logos) */
 .card-header {
     display: flex;
-    justify-content: flex-start; /* Alineación a la izquierda */
+    justify-content: flex-start;
+    /* Alineación a la izquierda */
     align-items: center;
-    gap: 15px; /* Espacio entre el logo y el nombre del banco */
+    gap: 15px;
+    /* Espacio entre el logo y el nombre del banco */
     margin-bottom: 15px;
-    padding-left: 10px; /* Separación del borde lateral */
+    padding-left: 10px;
+    /* Separación del borde lateral */
 }
 
 /* Estilo para los logos de los bancos */
 .bank-logo-img {
-    height: 35px; /* Tamaño del logo */
+    height: 35px;
+    /* Tamaño del logo */
     width: auto;
-    max-width: 60px; /* Para que Bancolombia no se vea gigante */
+    max-width: 60px;
+    /* Para que Bancolombia no se vea gigante */
     object-fit: contain;
 }
 
@@ -825,7 +836,8 @@ textarea[name="observaciones"] {
     justify-content: space-between;
     align-items: center;
     padding: 15px 10px;
-    border-bottom: 1px solid rgba(184, 147, 90, 0.2); /* Línea dorada sutil */
+    border-bottom: 1px solid rgba(184, 147, 90, 0.2);
+    /* Línea dorada sutil */
     transition: all 0.3s ease;
 }
 
@@ -843,7 +855,7 @@ textarea[name="observaciones"] {
 .mini-logo {
     height: 30px;
     width: auto;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .bank-text {
@@ -861,14 +873,16 @@ textarea[name="observaciones"] {
     display: block;
     font-size: 1.2rem;
     font-weight: 700;
-    color: #5c0a1a; /* Tu color vino de Lumara */
+    color: #5c0a1a;
+    /* Tu color vino de Lumara */
     letter-spacing: 0.5px;
 }
 
 .account-type {
     display: block;
     font-size: 0.65rem;
-    color: #b8935a; /* Tu color dorado */
+    color: #b8935a;
+    /* Tu color dorado */
     font-weight: 600;
     margin-top: -2px;
 }
@@ -880,9 +894,11 @@ textarea[name="observaciones"] {
         align-items: flex-start;
         gap: 8px;
     }
+
     .bank-details {
         text-align: left;
-        padding-left: 42px; /* Alineado con el logo */
+        padding-left: 42px;
+        /* Alineado con el logo */
     }
 }
 
@@ -1003,6 +1019,34 @@ textarea[name="observaciones"] {
    SOLUCIÓN DEFINITIVA PARA MÓVIL (LUMARA)
    ========================================================================== */
 @media (max-width: 768px) {
+
+    /* 1. Busca tu Media Query de celulares */
+    @media (max-width: 768px) {
+
+        /* ESTO ES LO QUE PONE UNO SOBRE OTRO */
+        .subcategoria-item div[style*="grid-template-columns"] {
+            display: flex !important;
+            flex-direction: column !important;
+            /* Cambia de horizontal a vertical */
+            gap: 12px !important;
+            /* Espacio entre los desplegables */
+        }
+
+        /* Ajustamos los selects e inputs para que ocupen todo el ancho */
+        .subcategoria-item select,
+        .subcategoria-item input {
+            width: 100% !important;
+            /* Así el texto "¿Qué vela deseas?" ya no se corta */
+            display: block !important;
+            height: 45px !important;
+            /* Más fácil de tocar en el celular */
+        }
+
+        /* Opcional: Centrar el número de cantidad */
+        .subcategoria-item input[type="number"] {
+            text-align: center;
+        }
+    }
 
     /* --- 1. ARREGLO DEL HERO (image_b590b4.png) --- */
     .hero {
@@ -1171,50 +1215,17 @@ textarea[name="observaciones"] {
         border-radius: 25px !important;
     }
 
-    /* --- BOTÓN FLOTANTE WHATSAPP --- */
-    .whatsapp-float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 20px;
-        right: 20px;
-        background-color: #25d366;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        z-index: 10000;
-        /* Asegura que esté por encima de todo */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-        transform: scale(1.1);
-        background-color: #128c7e;
-    }
-
-    .whatsapp-float img {
-        width: 35px;
-        height: 35px;
-    }
-
-    /* Ajuste para móviles: un poco más pequeño para no tapar el formulario */
-    @media (max-width: 768px) {
-        .whatsapp-float {
-            width: 50px;
-            height: 50px;
-            bottom: 15px;
-            right: 15px;
-        }
-
-        .whatsapp-float img {
-            width: 30px;
-            height: 30px;
-        }
+    /* Estilizar los select e inputs para que no parezcan de Windows viejo */
+    .subcategoria-item select,
+    .subcategoria-item input {
+        border: 1px solid #eee !important;
+        background-color: #fdfdfd !important;
+        border-radius: 10px !important;
+        /* Bordes redondeados */
+        padding: 12px !important;
+        font-size: 14px !important;
+        color: #555;
+        transition: all 0.3s ease;
     }
 
     /* ==========================================================================
@@ -1277,5 +1288,6 @@ textarea[name="observaciones"] {
             z-index: 10001 !important;
             /* Por encima de cualquier menú */
         }
+
+
     }
-}
