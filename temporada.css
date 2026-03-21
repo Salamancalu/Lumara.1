@@ -819,14 +819,64 @@ textarea[name="observaciones"] {
 
 
 /* ==========================================================================
-   7. RESPONSIVO
+   7. RESPONSIVO (OPTIMIZADO)
    ========================================================================== */
 @media (max-width: 768px) {
-    .navbar { height: auto; padding: 15px 0; }
-    .nav-links { display: none; } /* Ocultar menú en móvil para simplicidad */
-    .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
-    .hero h1 { font-size: 2.5rem; }
-    .hero-visual { width: 100%; height: 300px; margin-top: 40px; }
-    .main-img { width: 220px; }
-    .sub-img { width: 150px; }
+    /* Navbar: Centramos el contenido para que no se vea vacío */
+    .navbar { 
+        height: auto; 
+        padding: 15px 20px; 
+        display: flex;
+        justify-content: center; 
+    }
+
+    /* En lugar de display: none, podrías usar un menú básico o 
+       simplemente asegurar que el logo esté centrado */
+    .nav-links { 
+        display: none; 
+    } 
+
+    /* Hero: Ajuste de espaciado y lectura */
+    .hero { 
+        flex-direction: column; 
+        text-align: center; 
+        padding: 60px 20px; /* Más aire arriba y abajo */
+        gap: 30px; /* Espacio entre el texto y la imagen */
+    }
+
+    .hero h1 { 
+        font-size: 2.2rem; /* Un poco más pequeño para evitar saltos de línea raros */
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    /* Contenedor visual: Controlamos que las imágenes no se desborden */
+    .hero-visual { 
+        width: 100%; 
+        height: auto; /* Cambiado de fijo a auto para evitar deformación */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    /* Imágenes: Ajuste de escala para que quepan en pantallas pequeñas */
+    .main-img { 
+        width: 80%; /* Usamos porcentajes para que sea flexible */
+        max-width: 250px; 
+        height: auto;
+    }
+
+    .sub-img { 
+        width: 40%; 
+        max-width: 150px;
+        position: absolute; /* Si usas posicionamiento absoluto, asegúrate de ajustarlo */
+        bottom: -10px;
+        right: 5%;
+    }
 }

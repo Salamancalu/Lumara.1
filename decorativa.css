@@ -7,7 +7,7 @@
     --cream: #f8f6f2;
     --white: #ffffff;
     --text: #333333;
-    --shadow: 0 10px 30px rgba(0,0,0,0.05);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -28,7 +28,7 @@ body {
 }
 
 /* ==========================================================================
-   2. HEADER (CORREGIDO: image_ba6377)
+   2. HEADER Y NAVEGACIÓN
    ========================================================================== */
 .navbar {
     background: var(--white);
@@ -38,7 +38,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -58,7 +58,8 @@ body {
 }
 
 .main-logo {
-    height: 60px !important; /* Tamaño fijo para evitar desproporción */
+    height: 60px !important;
+    /* Tamaño fijo para evitar desproporción */
     width: auto;
 }
 
@@ -113,184 +114,506 @@ body {
 }
 
 /* ==========================================================================
-   3. HERO (ESTILO BORGOÑA: image_bb5703)
+   3. CENTRADO DEL BOTÓN VOLVER Y TÍTULO
    ========================================================================== */
-.hero {
-    background-color: var(--burgundy); /* Fondo total borgoña */
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    padding: 60px 10%;
-    color: var(--white);
-    overflow: hidden;
+
+/* Esto centra el bloque completo */
+.seccion-coleccion {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-.hero-content {
-    flex: 1;
-    max-width: 600px;
-}
-
-.badge {
+/* Esto centra el botón "Volver al Catálogo" */
+.enlace-atras {
     display: inline-block;
-    background: rgba(184, 147, 90, 0.2);
-    color: var(--gold);
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 2px;
     margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 25px;
-}
-
-.hero p {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    opacity: 0.9;
-}
-
-.hero-btns {
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    padding: 15px 35px;
-    border-radius: 50px;
+    color: var(--gold);
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.8rem;
-    transition: 0.3s;
+    letter-spacing: 1px;
 }
 
-.btn-gold {
-    background: var(--gold);
-    color: var(--white);
-}
-
-.catalog .btn-gold {
-    display: block;       /* Lo vuelve bloque para poder centrarlo */
-    width: fit-content;   /* Ajusta el ancho al texto */
-    margin: 50px auto 0;  /* CENTRA solo este botón */
-    padding: 10px 100px; /* Tamaño grande como en la imagen */
-}
-
-.btn-outline {
-    border: 2px solid var(--white);
-    color: var(--white);
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* IMÁGENES FLOTANTES (CORREGIDO: image_bb57b9) */
-.hero-visual {
-    flex: 1;
-    position: relative;
-    height: 450px;
-    display: flex;
-    justify-content: center;
-}
-
-.floating-card {
-    position: absolute;
-    background: var(--white);
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-.main-img {
-    width: 300px;
-    z-index: 2;
-    top: 20px;
-    right: 10%;
-    transform: rotate(-3deg);
-}
-
-.sub-img {
-    width: 200px;
-    z-index: 3;
-    bottom: 20px;
-    left: 10%;
-    transform: rotate(5deg);
-}
-
-.floating-card img {
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-}
-
-/* ==========================================================================
-   4. COLECCIONES / CATÁLOGO
-   ========================================================================== */
-.catalog {
-    padding: 100px 5%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
-
-.section-title {
+/* Esto centra el título de la colección */
+.titulo-minimalista {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     color: var(--burgundy);
-    margin-bottom: 50px;
+    margin: 0 auto;
 }
 
-.categories-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+/* ==========================================================================
+   3. GRID Y BOTÓN (CORREGIDO)
+   ========================================================================== */
+.btn-ver-mas {
+    /* Clase corregida para que coincida con tu HTML */
+    background: var(--gold);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: 15px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.btn-ver-mas:hover {
+    background: var(--burgundy);
+}
+
+/* ==========================================================================
+   AJUSTE DE TAMAÑO: TARJETA PROPORCIONAL Y CENTRADA
+   ========================================================================== */
+
+/* 1. La tarjeta: QUITAMOS alturas fijas */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    /* Que la caja solo mida lo que mide su contenido */
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* 2. La imagen: Reducimos su tamaño para que la caja sea más corta */
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* Esto la hace cuadrada y más pequeña */
+    max-height: 300px;
+    /* LIMITA aquí el largo de la foto */
+    overflow: hidden;
+}
+
+.foto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Recorta los bordes para llenar el cuadrado sin deformar */
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.foto.active {
+    opacity: 1;
+}
+
+
+/* ==========================================================================
+   CONFIGURACIÓN DE LAS 4 COLUMNAS (Usando tus clases reales)
+   ========================================================================== */
+
+/* 1. EL CONTENEDOR (Lo que envuelve a los articles) */
+.product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    /* Aquí se crean las 4 columnas */
+    gap: 20px;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.category-card {
-    background: var(--white);
-    border-radius: 30px;
+/* 2. LA TARJETA (Asegura que no se deforme) */
+.product-item {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 3. LA IMAGEN (Cuadrada y proporcional para que la vela se vea bien) */
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* Mantiene la proporción 1 a 1 */
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: 0.3s;
 }
 
-.cat-img {
-    height: 280px;
-    background-size: cover;
-    background-position: center;
+.foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Evita que la vela se estire o se vea aplastada */
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.cat-info {
-    padding: 30px;
+/* --- RESPONSIVO: CELULAR --- */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        /* 2 columnas en tablet */
+    }
 }
 
-.cat-info h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--burgundy);
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr !important;
+        /* 1 columna en celular */
+    }
+}
+
+
+/* ==========================================================================
+   ESTILOS UNIFICADOS: GRID, CARRUSEL Y EFECTO DIFUMINADO (LUMARA)
+   ========================================================================== */
+
+/* 1. EL CONTENEDOR DE LAS 4 COLUMNAS */
+.product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    /* 4 Columnas en PC */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 2. LA TARJETA (Compacta y alineada) */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Hace que todas las tarjetas de la fila midan lo mismo */
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    /* Necesario para que el "Ver más" no se salga */
+}
+
+/* 3. CONTENEDOR DE IMAGEN (Cuadrado y base del efecto) */
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* Mantiene proporción 1:1 (Cuadrado) */
+    background: #000;
+    overflow: hidden;
+}
+
+.carrusel-fotos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: filter 0.5s ease;
+}
+
+.foto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Centra la vela sin deformarla */
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.foto.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+/* 4. CAPA DE DESCRIPCIÓN (back-content) - ESTILO PREMIUM */
+.back-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 28, 28, 0.85);
+    /* Un gris casi negro más elegante */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: #fdfdfd !important;
+    text-align: center;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Título interno de la descripción */
+.back-content::before {
+    content: "DETALLES";
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+    /* Asegúrate de tener definida esta variable o usa #d4af37 */
     margin-bottom: 10px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 5px;
 }
 
-.btn-cat {
-    display: inline-block;
-    margin-top: 15px;
+.description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-style: italic;
+    /* Le da un toque más artesanal */
+    color: #e0e0e0;
+}
+
+
+/* Añadiendo un pequeño detalle decorativo antes de cada dato */
+.details-list p::before {
+    content: "✦";
+    color: var(--gold);
+    font-size: 0.7rem;
+}
+
+/* Activación del efecto */
+.product-item.active .back-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-item.active .carrusel-fotos {
+    filter: blur(8px) brightness(0.5);
+}
+
+/* 5. BLOQUE DE INFORMACIÓN (Blanco y compacto) */
+.product-info-block {
+    padding: 15px !important;
+    /* Espacio reducido */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Empuja el botón al final */
+    gap: 5px;
+}
+
+/* Alineación de nombres */
+.product-info-block h3 {
+    margin: 0 0 5px 0 !important;
+    padding: 0 !important;
+    min-height: 2.5em;
+    /* Asegura que nombres cortos y largos ocupen lo mismo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Precio */
+.product-info-block p {
+    margin: 0 0 10px 0 !important;
+    font-weight: bold;
+    color: #666;
+}
+
+/* Botón siempre al mismo nivel */
+.btn-ver-mas {
+    margin-top: auto;
+    /* Truco final para alinear todos los botones abajo */
+    align-self: center;
+}
+
+/* ==========================================================================
+   SOLUCIÓN UNIFICADA: RESPONSIVO (MÓVIL Y TABLET)
+   ========================================================================== */
+
+/* 1. TABLETS (Pantallas medianas) */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+    }
+}
+
+/* 2. CELULARES (UNA SOBRE OTRA) */
+@media (max-width: 768px) {
+
+    /* Ocultamos lo innecesario */
+    .nav-links {
+        display: none;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .carousel-container {
+        height: 250px;
+    }
+
+    /* FORZAMOS UNA COLUMNA EN EL GRID */
+    section.product-grid-section .product-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 35px !important;
+        /* Espacio para que no se vean pegadas */
+        padding: 15px !important;
+    }
+
+    /* Aseguramos que la vela ocupe el ancho correcto */
+    .product-item {
+        width: 100% !important;
+        max-width: 380px !important;
+        /* Evita que se vea gigante en pantallas un poco más anchas */
+    }
+
+    /* Ajuste de títulos para que no se corten */
+    .titulo-principal {
+        font-size: 2.2rem;
+    }
+}
+
+/* --- AJUSTE PARA EL FORMULARIO DINÁMICO --- */
+
+/* Suavizado de los items de subcategoría */
+.subcategoria-item {
+    background: #ffffff !important;
+    /* Blanco puro para limpieza */
+    border-left: 5px solid var(--gold) !important;
+    /* Usamos tu variable de oro */
+    border-radius: 15px !important;
+    /* Curvas más suaves */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    /* Sombra sutil, no acartonada */
+    padding: 20px !important;
+    margin-bottom: 25px !important;
+}
+
+/* Títulos de las categorías (RECORDATORIOS, CORPORATIVO) */
+.subcategoria-item label {
+    letter-spacing: 1px;
+    margin-bottom: 15px !important;
+    color: var(--burgundy) !important;
+    /* Tu color vino para contraste elegante */
+}
+
+/* Estilizar los select e inputs para que no parezcan de Windows viejo */
+.subcategoria-item select,
+.subcategoria-item input {
+    border: 1px solid #eee !important;
+    background-color: #fdfdfd !important;
+    border-radius: 10px !important;
+    /* Bordes redondeados */
+    padding: 12px !important;
+    font-size: 14px !important;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al hacer clic o pasar el mouse */
+.subcategoria-item select:focus,
+.subcategoria-item input:focus {
+    outline: none;
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 8px rgba(184, 147, 90, 0.2) !important;
+    background-color: #fff !important;
+}
+
+/* 1. CORRECCIÓN DEL CONTENEDOR (Para que nada se salga) */
+.subcategoria-item>div {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 80px !important;
+    /* Mantenemos tus 3 columnas originales */
+    gap: 12px !important;
+    align-items: center !important;
+}
+
+/* 2. REPARACIÓN DEL INPUT DE CANTIDAD */
+.subcategoria-item input[type="number"] {
+    width: 100% !important;
+    min-width: 60px !important;
+    padding: 10px !important;
+    text-align: center;
+}
+
+/* 3. RESPONSIVE (CELULARES) - Aquí es donde se ponen uno encima de otro */
+@media (max-width: 768px) {
+    .subcategoria-item>div {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: none !important;
+    }
+
+    .subcategoria-item select,
+    .subcategoria-item input {
+        width: 100% !important;
+        margin-bottom: 5px;
+    }
+}
+
+/* 1. Centra todo el contenido de la sección */
+.hero-coleccion {
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 2. Estilo y centrado del botón "Volver al Catálogo" */
+.link-retroceso {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     color: var(--gold);
     text-decoration: none;
     font-weight: 700;
-    border-bottom: 2px solid var(--gold);
-
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    transition: 0.3s;
 }
 
+.link-retroceso:hover {
+    color: var(--burgundy);
+}
+
+/* 3. Estilo de los textos */
+.titulo-principal {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--burgundy);
+    margin-bottom: 15px;
+}
+
+.separador-dorado {
+    width: 60px;
+    height: 3px;
+    background-color: var(--gold);
+    margin: 0 auto 20px;
+    /* Centra el separador */
+}
+
+.subtitulo-descripcion {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666;
+}
 
 /* ==========================================================================
    5. FORMULARIO LUMARA (VERSIÓN ARMONIOSA FINAL)
@@ -306,8 +629,16 @@ body {
     margin: 0 auto;
 }
 
-.form-header { text-align: center; margin-bottom: 50px; }
-.form-header h2 { font-family: 'Playfair Display', serif; color: var(--burgundy); font-size: 2.5rem; }
+.form-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.form-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--burgundy);
+    font-size: 2.5rem;
+}
 
 /* Container spacing */
 .form-block {
@@ -316,7 +647,8 @@ body {
 
 /* Styling the title and number */
 .block-title span {
-    background-color: #333; /* Or your brand color */
+    background-color: #333;
+    /* Or your brand color */
     color: white;
     padding: 2px 8px;
     border-radius: 50%;
@@ -330,13 +662,15 @@ textarea[name="observaciones"] {
     border: 1px solid #ddd;
     border-radius: 8px;
     font-family: inherit;
-    resize: vertical; /* Prevents breaking horizontal layout */
+    resize: vertical;
+    /* Prevents breaking horizontal layout */
     transition: border-color 0.3s ease;
 }
 
 textarea[name="observaciones"]:focus {
     outline: none;
-    border-color: #a8dadc; /* Example soft highlight */
+    border-color: #a8dadc;
+    /* Example soft highlight */
     box-shadow: 0 0 5px rgba(168, 218, 220, 0.5);
 }
 
@@ -359,10 +693,21 @@ textarea[name="observaciones"]:focus {
     gap: 20px;
 }
 
-.field { display: flex; flex-direction: column; gap: 8px; }
-.field label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #888; }
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
-input, textarea {
+.field label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+}
+
+input,
+textarea {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 15px;
@@ -376,7 +721,10 @@ input, textarea {
     gap: 15px;
 }
 
-.radio-card input { display: none; }
+.radio-card input {
+    display: none;
+}
+
 .radio-box {
     padding: 15px;
     background: var(--white);
@@ -388,27 +736,41 @@ input, textarea {
     transition: 0.3s;
 }
 
-.radio-card input:checked + .radio-box {
+.radio-card input:checked+.radio-box {
     border-color: var(--gold);
     color: var(--gold);
     box-shadow: 0 5px 15px rgba(184, 147, 90, 0.2);
 }
 
-.btn-submit {
-    width: 100%;
-    padding: 22px;
-    background: var(--burgundy);
-    color: var(--white);
-    border: none;
-    border-radius: 50px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+/* DISEÑO PREMIUM PARA EL BOTÓN DE ENVÍO */
+#submit-btn.btn-gold {
+    /* Eliminamos el estilo "nativo" aburrido */
+    background: linear-gradient(135deg, #b8935a ) !important;
+    color: white !important;
+    border: none !important;
     cursor: pointer;
-    transition: 0.3s;
-}
 
-.btn-submit:hover { background: var(--gold); transform: translateY(-3px); }
+    /* Estructura y suavidad */
+    width: 100% !important;
+    padding: 20px !important;
+    border-radius: 50px !important;
+    /* Bordes tipo "píldora" muy modernos */
+    margin-top: 30px;
+
+    /* Tipografía con aire de marca de lujo */
+    font-family: 'Playfair Display', serif;
+    /* O Montserrat si prefieres algo más moderno */
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    letter-spacing: 4px !important;
+    /* Espaciado elegante entre letras */
+    text-transform: uppercase;
+
+    /* Efecto de elevación */
+    box-shadow: 0 10px 25px rgba(175, 170, 170, 0.3) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    outline: none;
+}
 
 /* ==========================================================================
    5.1 VENTANA EMERGENTE DE ÉXITO
@@ -423,8 +785,16 @@ input, textarea {
     margin: 0 auto;
 }
 
-.form-header { text-align: center; margin-bottom: 50px; }
-.form-header h2 { font-family: 'Playfair Display', serif; color: var(--burgundy); font-size: 2.5rem; }
+.form-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.form-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--burgundy);
+    font-size: 2.5rem;
+}
 
 .form-block {
     background: var(--cream);
@@ -473,10 +843,21 @@ input, textarea {
     gap: 20px;
 }
 
-.field { display: flex; flex-direction: column; gap: 8px; }
-.field label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #888; }
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
-input, textarea {
+.field label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+}
+
+input,
+textarea {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 15px;
@@ -490,7 +871,10 @@ input, textarea {
     gap: 15px;
 }
 
-.radio-card input { display: none; }
+.radio-card input {
+    display: none;
+}
+
 .radio-box {
     padding: 15px;
     background: var(--white);
@@ -502,7 +886,7 @@ input, textarea {
     transition: 0.3s;
 }
 
-.radio-card input:checked + .radio-box {
+.radio-card input:checked+.radio-box {
     border-color: var(--gold);
     color: var(--gold);
     box-shadow: 0 5px 15px rgba(184, 147, 90, 0.2);
@@ -522,7 +906,10 @@ input, textarea {
     transition: 0.3s;
 }
 
-.btn-submit:hover { background: var(--gold); transform: translateY(-3px); }
+.btn-submit:hover {
+    background: var(--gold);
+    transform: translateY(-3px);
+}
 
 /*AROMAS Y CONTENEDOR */
 
@@ -530,17 +917,20 @@ input, textarea {
 .product-row {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Alinea todo a la izquierda */
+    justify-content: flex-start;
+    /* Alinea todo a la izquierda */
     background: #ffffff;
     padding: 12px 20px;
     margin-bottom: 10px;
     border-radius: 15px;
-    gap: 40px; /* Espacio fijo entre el nombre y los controles */
+    gap: 40px;
+    /* Espacio fijo entre el nombre y los controles */
 }
 
 /* Nombre de la vela con ancho controlado */
 .product-info {
-    flex: 0 0 160px; /* Evita que el nombre empuje los controles al extremo */
+    flex: 0 0 160px;
+    /* Evita que el nombre empuje los controles al extremo */
     font-weight: 600;
     color: #6a2a2a;
     display: flex;
@@ -551,7 +941,8 @@ input, textarea {
 .product-controls {
     display: flex;
     align-items: center;
-    gap: 30px; /* Espacio corto entre el selector y el número */
+    gap: 30px;
+    /* Espacio corto entre el selector y el número */
 }
 
 /* Selector de Aroma estilizado */
@@ -565,14 +956,16 @@ input, textarea {
 
 /* Cuadro de Observaciones: Ancho Total */
 textarea[name="observaciones"] {
-    width: 100% !important; /* Ocupa todo el ancho disponible */
+    width: 100% !important;
+    /* Ocupa todo el ancho disponible */
     min-height: 110px;
     padding: 15px;
     border-radius: 15px;
     border: 1px solid #e0e0e0;
     font-family: 'Montserrat', sans-serif;
-    resize: none; 
-    box-sizing: border-box; /* Evita que el padding lo saque de los bordes */
+    resize: none;
+    box-sizing: border-box;
+    /* Evita que el padding lo saque de los bordes */
 }
 
 /* Contenedor de Métodos de Pago */
@@ -603,15 +996,248 @@ textarea[name="observaciones"] {
     transform: translateY(-5px);
 }
 
-/* Colores sutiles por banco */
-.payment-card.nequi { border-left: 5px solid #ff00bf; } /* Color Nequi */
-.payment-card.bancolombia { border-left: 5px solid #00448d; } /* Color Bancolombia */
+/* ==========================================================================
+   NUEVA SECCIÓN: ENVÍOS Y PAGOS (RESTAURADO Y ACTUALIZADO)
+   ========================================================================== */
 
+/* 1. Contenedor Principal (Caja Blanca) */
+.payment-block {
+    background: #ffffff !important;
+    padding: 30px !important;
+    border-radius: 40px !important;
+    border: 1px solid rgba(184, 147, 90, 0.15);
+    /* Borde dorado muy sutil */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* 2. Sub-títulos de bloque (Envíos y Cuentas) */
+.sub-block-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gold);
+    /* Color dorado de la marca */
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- A. SECCIÓN ENVÍOS --- */
+.shipping-info-wrapper {
+    margin-bottom: 30px;
+}
+
+.shipping-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.shipping-card {
+    background: var(--cream);
+    /* Fondo crema claro */
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid transparent;
+    transition: 0.3s ease;
+}
+
+.shipping-card:hover {
+    border-color: rgba(184, 147, 90, 0.3);
+    transform: translateY(-3px);
+}
+
+.ship-icon {
+    font-size: 2rem;
+    /* Icono grande */
+    color: var(--burgundy);
+    flex-shrink: 0;
+}
+
+.ship-details h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--burgundy);
+    margin-bottom: 2px;
+}
+
+.ship-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.currency {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.ship-note {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Separador decorativo */
+.payment-separator {
+    border: none;
+    border-top: 2px solid var(--cream);
+    /* Separador sutil */
+    margin: 30px 0;
+}
+
+/* --- B. SECCIÓN MÉTODOS DE PAGO --- */
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Actualización de las Tarjetas de Pago */
+.payment-card {
+    background: #fdfdfd;
+    /* Fondo ligeramente diferente para contrastar */
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.payment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Borde lateral de color */
+.payment-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    border-radius: 3px;
+}
+
+
+/* Actualización de los Cabeceros de Tarjeta (Alineación con Logos) */
 .card-header {
+    display: flex;
+    justify-content: flex-start;
+    /* Alineación a la izquierda */
+    align-items: center;
+    gap: 15px;
+    /* Espacio entre el logo y el nombre del banco */
+    margin-bottom: 15px;
+    padding-left: 10px;
+    /* Separación del borde lateral */
+}
+
+/* Estilo para los logos de los bancos */
+.bank-logo-img {
+    height: 35px;
+    /* Tamaño del logo */
+    width: auto;
+    max-width: 60px;
+    /* Para que Bancolombia no se vea gigante */
+    object-fit: contain;
+}
+
+/* --- ESTILO REFINADO DE PAGOS --- */
+.payment-simple-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.payment-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(184, 147, 90, 0.2);
+    /* Línea dorada sutil */
+    transition: all 0.3s ease;
+}
+
+.payment-row:hover {
+    background-color: rgba(184, 147, 90, 0.05);
+    border-radius: 8px;
+}
+
+.bank-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mini-logo {
+    height: 30px;
+    width: auto;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.bank-text {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #444;
+}
+
+.bank-details {
+    text-align: right;
+}
+
+.account-num {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #5c0a1a;
+    /* Tu color vino de Lumara */
+    letter-spacing: 0.5px;
+}
+
+.account-type {
+    display: block;
+    font-size: 0.65rem;
+    color: #b8935a;
+    /* Tu color dorado */
+    font-weight: 600;
+    margin-top: -2px;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 480px) {
+    .payment-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .bank-details {
+        text-align: left;
+        padding-left: 42px;
+        /* Alineado con el logo */
+    }
+}
+
+
+/* Nota final aclaratoria */
+.final-note {
+    text-align: center;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #888;
+    margin-top: 30px;
 }
 
 .bank-name {
@@ -675,11 +1301,26 @@ textarea[name="observaciones"] {
     margin-bottom: 20px;
 }
 
-.footer-links { list-style: none; }
-.footer-links li { margin-bottom: 10px; }
-.footer-links a { text-decoration: none; color: #666; font-size: 0.9rem; }
+.footer-links {
+    list-style: none;
+}
 
-.social-row { display: flex; gap: 15px; margin-top: 20px; }
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.social-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
 .social-item {
     width: 40px;
     height: 40px;
@@ -700,76 +1341,4 @@ textarea[name="observaciones"] {
     margin-top: 60px;
     font-size: 0.8rem;
     color: #999;
-}
-
-/* Estilos para los artículos de productos que ya tienes */
-
-/* 1. Asegurar la estructura de 4 niveles */
-.product-card {
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important; /* Deja que crezca según el contenido */
-    min-height: 550px !important; 
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-/* 2. NIVEL 1: La Imagen (grande y limpia) */
-.image-container.lumara-carousel {
-    height: 350px !important; /* Espacio generoso para la foto */
-    width: 100% !important;
-    position: relative !important; /* Evita que el texto se suba */
-    order: 1;
-}
-
-.carousel-track img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-}
-
-/* 3. NIVELES 2, 3 y 4: Nombre, Precio y Botón */
-.front-info {
-    order: 2;
-    padding: 20px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important; /* Espacio entre el nombre y el precio */
-    background: #fff !important;
-    text-align: center;
-}
-
-/* Estilo para el nombre (Nivel 2) */
-.front-info h3 {
-    margin: 0 !important;
-    color: #333;
-    font-size: 1.2rem;
-}
-
-/* Estilo para el precio (Nivel 3) */
-.front-info .price {
-    font-weight: bold;
-    color: #b08d57; /* El tono dorado de Lumara */
-    margin-bottom: 10px;
-}
-
-/* Estilo para el botón (Nivel 4) */
-.front-info .btn-pedir {
-    width: 100% !important;
-    align-self: center;
-}
-
-
-/* ==========================================================================
-   7. RESPONSIVO
-   ========================================================================== */
-@media (max-width: 768px) {
-    .navbar { height: auto; padding: 15px 0; }
-    .nav-links { display: none; } /* Ocultar menú en móvil para simplicidad */
-    .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
-    .hero h1 { font-size: 2.5rem; }
-    .hero-visual { width: 100%; height: 300px; margin-top: 40px; }
-    .main-img { width: 220px; }
-    .sub-img { width: 150px; }
 }

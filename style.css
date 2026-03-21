@@ -7,7 +7,7 @@
     --cream: #f8f6f2;
     --white: #ffffff;
     --text: #333333;
-    --shadow: 0 10px 30px rgba(0,0,0,0.05);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -38,7 +38,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -58,7 +58,8 @@ body {
 }
 
 .main-logo {
-    height: 60px !important; /* Tamaño fijo para evitar desproporción */
+    height: 60px !important;
+    /* Tamaño fijo para evitar desproporción */
     width: auto;
 }
 
@@ -116,7 +117,8 @@ body {
    3. HERO (ESTILO BORGOÑA: image_bb5703)
    ========================================================================== */
 .hero {
-    background-color: var(--burgundy); /* Fondo total borgoña */
+    background-color: var(--burgundy);
+    /* Fondo total borgoña */
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -176,10 +178,14 @@ body {
 }
 
 .catalog .btn-gold {
-    display: block;       /* Lo vuelve bloque para poder centrarlo */
-    width: fit-content;   /* Ajusta el ancho al texto */
-    margin: 50px auto 0;  /* CENTRA solo este botón */
-    padding: 10px 100px; /* Tamaño grande como en la imagen */
+    display: block;
+    /* Lo vuelve bloque para poder centrarlo */
+    width: fit-content;
+    /* Ajusta el ancho al texto */
+    margin: 50px auto 0;
+    /* CENTRA solo este botón */
+    padding: 10px 100px;
+    /* Tamaño grande como en la imagen */
 }
 
 .btn-outline {
@@ -189,7 +195,7 @@ body {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* IMÁGENES FLOTANTES (CORREGIDO: image_bb57b9) */
@@ -206,7 +212,7 @@ body {
     background: var(--white);
     padding: 10px;
     border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .main-img {
@@ -239,7 +245,7 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
 }
 
 .section-title {
@@ -306,8 +312,16 @@ body {
     margin: 0 auto;
 }
 
-.form-header { text-align: center; margin-bottom: 50px; }
-.form-header h2 { font-family: 'Playfair Display', serif; color: var(--burgundy); font-size: 2.5rem; }
+.form-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.form-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--burgundy);
+    font-size: 2.5rem;
+}
 
 /* Container spacing */
 .form-block {
@@ -316,7 +330,8 @@ body {
 
 /* Styling the title and number */
 .block-title span {
-    background-color: #333; /* Or your brand color */
+    background-color: #333;
+    /* Or your brand color */
     color: white;
     padding: 2px 8px;
     border-radius: 50%;
@@ -330,13 +345,15 @@ textarea[name="observaciones"] {
     border: 1px solid #ddd;
     border-radius: 8px;
     font-family: inherit;
-    resize: vertical; /* Prevents breaking horizontal layout */
+    resize: vertical;
+    /* Prevents breaking horizontal layout */
     transition: border-color 0.3s ease;
 }
 
 textarea[name="observaciones"]:focus {
     outline: none;
-    border-color: #a8dadc; /* Example soft highlight */
+    border-color: #a8dadc;
+    /* Example soft highlight */
     box-shadow: 0 0 5px rgba(168, 218, 220, 0.5);
 }
 
@@ -359,10 +376,21 @@ textarea[name="observaciones"]:focus {
     gap: 20px;
 }
 
-.field { display: flex; flex-direction: column; gap: 8px; }
-.field label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #888; }
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
-input, textarea {
+.field label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+}
+
+input,
+textarea {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 15px;
@@ -376,7 +404,10 @@ input, textarea {
     gap: 15px;
 }
 
-.radio-card input { display: none; }
+.radio-card input {
+    display: none;
+}
+
 .radio-box {
     padding: 15px;
     background: var(--white);
@@ -388,7 +419,7 @@ input, textarea {
     transition: 0.3s;
 }
 
-.radio-card input:checked + .radio-box {
+.radio-card input:checked+.radio-box {
     border-color: var(--gold);
     color: var(--gold);
     box-shadow: 0 5px 15px rgba(184, 147, 90, 0.2);
@@ -408,7 +439,10 @@ input, textarea {
     transition: 0.3s;
 }
 
-.btn-submit:hover { background: var(--gold); transform: translateY(-3px); }
+.btn-submit:hover {
+    background: var(--gold);
+    transform: translateY(-3px);
+}
 
 /* ==========================================================================
    5.1 VENTANA EMERGENTE DE ÉXITO
@@ -423,8 +457,16 @@ input, textarea {
     margin: 0 auto;
 }
 
-.form-header { text-align: center; margin-bottom: 50px; }
-.form-header h2 { font-family: 'Playfair Display', serif; color: var(--burgundy); font-size: 2.5rem; }
+.form-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.form-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--burgundy);
+    font-size: 2.5rem;
+}
 
 .form-block {
     background: var(--cream);
@@ -473,10 +515,21 @@ input, textarea {
     gap: 20px;
 }
 
-.field { display: flex; flex-direction: column; gap: 8px; }
-.field label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #888; }
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
-input, textarea {
+.field label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+}
+
+input,
+textarea {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 15px;
@@ -490,7 +543,10 @@ input, textarea {
     gap: 15px;
 }
 
-.radio-card input { display: none; }
+.radio-card input {
+    display: none;
+}
+
 .radio-box {
     padding: 15px;
     background: var(--white);
@@ -502,7 +558,7 @@ input, textarea {
     transition: 0.3s;
 }
 
-.radio-card input:checked + .radio-box {
+.radio-card input:checked+.radio-box {
     border-color: var(--gold);
     color: var(--gold);
     box-shadow: 0 5px 15px rgba(184, 147, 90, 0.2);
@@ -522,7 +578,10 @@ input, textarea {
     transition: 0.3s;
 }
 
-.btn-submit:hover { background: var(--gold); transform: translateY(-3px); }
+.btn-submit:hover {
+    background: var(--gold);
+    transform: translateY(-3px);
+}
 
 /*AROMAS Y CONTENEDOR */
 
@@ -530,17 +589,20 @@ input, textarea {
 .product-row {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Alinea todo a la izquierda */
+    justify-content: flex-start;
+    /* Alinea todo a la izquierda */
     background: #ffffff;
     padding: 12px 20px;
     margin-bottom: 10px;
     border-radius: 15px;
-    gap: 40px; /* Espacio fijo entre el nombre y los controles */
+    gap: 40px;
+    /* Espacio fijo entre el nombre y los controles */
 }
 
 /* Nombre de la vela con ancho controlado */
 .product-info {
-    flex: 0 0 160px; /* Evita que el nombre empuje los controles al extremo */
+    flex: 0 0 160px;
+    /* Evita que el nombre empuje los controles al extremo */
     font-weight: 600;
     color: #6a2a2a;
     display: flex;
@@ -551,7 +613,8 @@ input, textarea {
 .product-controls {
     display: flex;
     align-items: center;
-    gap: 30px; /* Espacio corto entre el selector y el número */
+    gap: 30px;
+    /* Espacio corto entre el selector y el número */
 }
 
 /* Selector de Aroma estilizado */
@@ -565,14 +628,16 @@ input, textarea {
 
 /* Cuadro de Observaciones: Ancho Total */
 textarea[name="observaciones"] {
-    width: 100% !important; /* Ocupa todo el ancho disponible */
+    width: 100% !important;
+    /* Ocupa todo el ancho disponible */
     min-height: 110px;
     padding: 15px;
     border-radius: 15px;
     border: 1px solid #e0e0e0;
     font-family: 'Montserrat', sans-serif;
-    resize: none; 
-    box-sizing: border-box; /* Evita que el padding lo saque de los bordes */
+    resize: none;
+    box-sizing: border-box;
+    /* Evita que el padding lo saque de los bordes */
 }
 
 /* Contenedor de Métodos de Pago */
@@ -603,15 +668,232 @@ textarea[name="observaciones"] {
     transform: translateY(-5px);
 }
 
-/* Colores sutiles por banco */
-.payment-card.nequi { border-left: 5px solid #ff00bf; } /* Color Nequi */
-.payment-card.bancolombia { border-left: 5px solid #00448d; } /* Color Bancolombia */
+/* ==========================================================================
+   NUEVA SECCIÓN: ENVÍOS Y PAGOS (RESTAURADO Y ACTUALIZADO)
+   ========================================================================== */
 
+/* 1. Contenedor Principal (Caja Blanca) */
+.payment-block {
+    background: #ffffff !important;
+    padding: 30px !important;
+    border-radius: 40px !important;
+    border: 1px solid rgba(184, 147, 90, 0.15); /* Borde dorado muy sutil */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important;
+}
+
+/* 2. Sub-títulos de bloque (Envíos y Cuentas) */
+.sub-block-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gold); /* Color dorado de la marca */
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- A. SECCIÓN ENVÍOS --- */
+.shipping-info-wrapper {
+    margin-bottom: 30px;
+}
+
+.shipping-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.shipping-card {
+    background: var(--cream); /* Fondo crema claro */
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid transparent;
+    transition: 0.3s ease;
+}
+
+.shipping-card:hover {
+    border-color: rgba(184, 147, 90, 0.3);
+    transform: translateY(-3px);
+}
+
+.ship-icon {
+    font-size: 2rem; /* Icono grande */
+    color: var(--burgundy);
+    flex-shrink: 0;
+}
+
+.ship-details h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--burgundy);
+    margin-bottom: 2px;
+}
+
+.ship-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.currency {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.ship-note {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Separador decorativo */
+.payment-separator {
+    border: none;
+    border-top: 2px solid var(--cream); /* Separador sutil */
+    margin: 30px 0;
+}
+
+/* --- B. SECCIÓN MÉTODOS DE PAGO --- */
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Actualización de las Tarjetas de Pago */
+.payment-card {
+    background: #fdfdfd; /* Fondo ligeramente diferente para contrastar */
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.payment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Borde lateral de color */
+.payment-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    border-radius: 3px;
+}
+
+
+/* Actualización de los Cabeceros de Tarjeta (Alineación con Logos) */
 .card-header {
+    display: flex;
+    justify-content: flex-start; /* Alineación a la izquierda */
+    align-items: center;
+    gap: 15px; /* Espacio entre el logo y el nombre del banco */
+    margin-bottom: 15px;
+    padding-left: 10px; /* Separación del borde lateral */
+}
+
+/* Estilo para los logos de los bancos */
+.bank-logo-img {
+    height: 35px; /* Tamaño del logo */
+    width: auto;
+    max-width: 60px; /* Para que Bancolombia no se vea gigante */
+    object-fit: contain;
+}
+
+/* --- ESTILO REFINADO DE PAGOS --- */
+.payment-simple-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.payment-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(184, 147, 90, 0.2); /* Línea dorada sutil */
+    transition: all 0.3s ease;
+}
+
+.payment-row:hover {
+    background-color: rgba(184, 147, 90, 0.05);
+    border-radius: 8px;
+}
+
+.bank-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mini-logo {
+    height: 30px;
+    width: auto;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+}
+
+.bank-text {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #444;
+}
+
+.bank-details {
+    text-align: right;
+}
+
+.account-num {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #5c0a1a; /* Tu color vino de Lumara */
+    letter-spacing: 0.5px;
+}
+
+.account-type {
+    display: block;
+    font-size: 0.65rem;
+    color: #b8935a; /* Tu color dorado */
+    font-weight: 600;
+    margin-top: -2px;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 480px) {
+    .payment-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .bank-details {
+        text-align: left;
+        padding-left: 42px; /* Alineado con el logo */
+    }
+}
+
+
+/* Nota final aclaratoria */
+.final-note {
+    text-align: center;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #888;
+    margin-top: 30px;
 }
 
 .bank-name {
@@ -675,11 +957,26 @@ textarea[name="observaciones"] {
     margin-bottom: 20px;
 }
 
-.footer-links { list-style: none; }
-.footer-links li { margin-bottom: 10px; }
-.footer-links a { text-decoration: none; color: #666; font-size: 0.9rem; }
+.footer-links {
+    list-style: none;
+}
 
-.social-row { display: flex; gap: 15px; margin-top: 20px; }
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.social-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
 .social-item {
     width: 40px;
     height: 40px;
@@ -703,14 +1000,282 @@ textarea[name="observaciones"] {
 }
 
 /* ==========================================================================
-   7. RESPONSIVO
+   SOLUCIÓN DEFINITIVA PARA MÓVIL (LUMARA)
    ========================================================================== */
 @media (max-width: 768px) {
-    .navbar { height: auto; padding: 15px 0; }
-    .nav-links { display: none; } /* Ocultar menú en móvil para simplicidad */
-    .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
-    .hero h1 { font-size: 2.5rem; }
-    .hero-visual { width: 100%; height: 300px; margin-top: 40px; }
-    .main-img { width: 220px; }
-    .sub-img { width: 150px; }
+
+    /* --- 1. ARREGLO DEL HERO (image_b590b4.png) --- */
+    .hero {
+        flex-direction: column !important;
+        /* Texto arriba, fotos abajo */
+        padding: 40px 5% !important;
+        text-align: center;
+        min-height: auto !important;
+    }
+
+    .hero-content {
+        max-width: 100% !important;
+        margin-bottom: 40px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem !important;
+        /* Evita que el título se corte */
+        line-height: 1.2;
+    }
+
+    .hero-btns {
+        flex-direction: column !important;
+        /* Botones uno sobre otro */
+        gap: 15px !important;
+        align-items: center;
+    }
+
+    .hero-btns .btn {
+        width: 100% !important;
+        max-width: 300px;
+    }
+
+    /* --- AJUSTE PARA MINIMIZAR IMÁGENES EN MÓVIL --- */
+    /* --- SUSTITUIR IMÁGENES POR PUNTOS DECORATIVOS EN MÓVIL --- */
+    .hero-visual {
+        height: 100px !important;
+        /* Espacio pequeño solo para el decorado */
+        width: 100% !important;
+        order: 2 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: relative !important;
+    }
+
+    /* Transformamos el contenedor de la imagen en un punto dorado */
+    .main-img {
+        width: 12px !important;
+        height: 12px !important;
+        background-color: var(--gold) !important;
+        border-radius: 50% !important;
+        border: none !important;
+        box-shadow: none !important;
+        position: relative !important;
+        right: 0 !important;
+        top: 0 !important;
+        transform: none !important;
+    }
+
+    /* Transformamos la sub-imagen en otro punto con transparencia */
+    .sub-img {
+        width: 8px !important;
+        height: 8px !important;
+        background-color: rgba(184, 147, 90, 0.5) !important;
+        /* Dorado suave */
+        border-radius: 50% !important;
+        border: none !important;
+        box-shadow: none !important;
+        position: relative !important;
+        left: 15px !important;
+        bottom: 0 !important;
+        transform: none !important;
+    }
+
+    /* Ocultamos las fotos reales para que solo queden los puntos */
+    .floating-card img {
+        display: none !important;
+    }
+
+    /* Quitamos el padding blanco de los contenedores */
+    .floating-card {
+        background: transparent !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* --- 2. ARREGLO DE COLECCIONES (image_b590e9.png) --- */
+    .categories-container {
+        grid-template-columns: 1fr !important;
+        /* Una tarjeta por fila */
+        gap: 20px;
+    }
+
+    .cat-img {
+        height: 220px !important;
+        /* Reduce la altura de la imagen de la vela */
+    }
+
+    .section-title {
+        font-size: 2rem !important;
+    }
+
+    /* --- 3. ARREGLO DEL FORMULARIO (image_b582c0.png y similares) --- */
+
+    /* Forzamos a que cada fila de producto sea una columna vertical */
+    .product-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 15px !important;
+        padding: 20px !important;
+    }
+
+    .product-info {
+        flex: none !important;
+        width: 100% !important;
+        text-align: left;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+    }
+
+    .product-controls {
+        flex-direction: column !important;
+        /* Select y Cantidad uno sobre otro */
+        align-items: stretch !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    /* Los selectores ahora ocuparán todo el ancho sin salirse */
+    .select-aroma,
+    .product-controls input[type="number"],
+    .form-block select {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        height: 45px !important;
+    }
+
+    /* Arreglo de los Radios Gigantes (image_b59108.png) */
+    .field input[type="radio"] {
+        width: 20px !important;
+        height: 20px !important;
+        display: inline-block !important;
+        /* Para que no desaparezcan */
+    }
+
+    .field label {
+        display: flex !important;
+        flex-direction: row !important;
+        /* Radio al lado del texto */
+        align-items: center !important;
+        gap: 10px;
+        text-transform: none !important;
+    }
+
+    /* Ajuste de inputs de contacto */
+    .input-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .form-block {
+        padding: 25px 15px !important;
+        border-radius: 25px !important;
+    }
+
+    /* --- BOTÓN FLOTANTE WHATSAPP --- */
+    .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 10000;
+        /* Asegura que esté por encima de todo */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+        background-color: #128c7e;
+    }
+
+    .whatsapp-float img {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Ajuste para móviles: un poco más pequeño para no tapar el formulario */
+    @media (max-width: 768px) {
+        .whatsapp-float {
+            width: 50px;
+            height: 50px;
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .whatsapp-float img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    /* ==========================================================================
+   ARREGLO DEL MENÚ DE NAVEGACIÓN (image_b61c5c)
+   ========================================================================== */
+    @media (max-width: 768px) {
+
+        /* Reducimos el espaciado interno de todo el header */
+        .nav-container {
+            width: 100% !important;
+            /* Usamos todo el ancho de la pantalla */
+            padding: 0 10px !important;
+            /* Solo un pequeño margen lateral */
+            gap: 5px !important;
+            /* Espacio mínimo entre el logo y los enlaces */
+            justify-content: flex-start !important;
+            /* Alineamos a la izquierda */
+        }
+
+        /* Compactamos la zona del logo y nombre de marca */
+        .logo-area {
+            gap: 8px !important;
+            flex-shrink: 1 !important;
+            /* Permite que se encoja si es necesario */
+        }
+
+        .main-logo {
+            height: 45px !important;
+            /* Logo más pequeño */
+        }
+
+        .brand-name {
+            font-size: 1.2rem !important;
+            /* Texto de marca más pequeño */
+        }
+
+        /* Compactamos los enlaces de INICIO, COLECCIONES, etc. */
+        .nav-links {
+            display: flex !important;
+            gap: 10px !important;
+            /* Reducimos el espacio entre los textos */
+            justify-content: flex-end !important;
+            /* Los llevamos a la derecha */
+            margin-left: auto !important;
+            /* Empuja los enlaces a la derecha del logo */
+        }
+
+        .nav-links a {
+            font-size: 0.6rem !important;
+            /* Texto mucho más pequeño */
+            white-space: nowrap !important;
+            /* Evita que los textos salten de línea */
+            padding: 5px !important;
+        }
+
+        /* Forzamos que el botón de WhatsApp se mantenga en su lugar */
+        .whatsapp-float {
+            display: flex !important;
+            visibility: visible !important;
+            z-index: 10001 !important;
+            /* Por encima de cualquier menú */
+        }
+    }
 }

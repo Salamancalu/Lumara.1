@@ -16,7 +16,7 @@
     <header class="navbar">
         <div class="nav-container">
             <a href="#" class="logo-area">
-                <img src="imagenes/Logo-lumara.PNG" alt="Lumara Logo" class="main-logo">
+                <img src="imagenes/Logo-lumara.png" alt="Lumara Logo" class="main-logo">
                 <div class="brand-text">
                     <span class="brand-name">Lumara</span>
                     <span class="slogan">LUZ Y AROMA QUE ABRAZAN</span>
@@ -143,35 +143,71 @@
                         placeholder="Detalles sobre colores, aromas o personalización..."></textarea>
                 </div>
 
-                <div class="form-block payment-methods">
+                <div class="form-block payment-block">
+
                     <div class="block-title">
-                        <span>5<i class="fas fa-credit-card"></i></span>
-                        <h3>Métodos de Pago</h3>
+                        <span>5</span> Envíos y Métodos de Pago
                     </div>
 
-                    <div class="payment-grid">
-                        <div class="payment-card nequi">
-                            <div class="card-header">
-                                <span class="bank-name">NEQUI</span>
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <div class="card-number">311 491 6142</div>
-                            <p class="card-label">Número de cuenta</p>
-                        </div>
+                    <div class="shipping-info-wrapper">
+                        <h4 class="sub-block-title">Información de Envío</h4>
+                        <div class="shipping-options-grid">
 
-                        <div class="payment-card bancolombia">
-                            <div class="card-header">
-                                <span class="bank-name">BANCOLOMBIA</span>
-                                <i class="fas fa-university"></i>
+                            <div class="shipping-card bogota">
+                                <div class="ship-icon">📍</div>
+                                <div class="ship-details">
+                                    <h5>Envío en Bogotá</h5>
+                                    <p class="ship-price">$10.000 <span class="currency">COP</span></p>
+                                    <p class="ship-note">Tarifa Plana</p>
+                                </div>
                             </div>
-                            <div class="card-number">912-049051-40</div>
-                            <p class="card-label">Ahorros</p>
+
+                            <div class="shipping-card surroundings">
+                                <div class="ship-icon">🚛</div>
+                                <div class="ship-details">
+                                    <h5>Alrededores</h5>
+                                    <p class="ship-price">Pago Contra Entrega</p>
+                                    <p class="ship-note">Directo a la Transportadora</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <p class="payment-note">
-                        * Una vez nos comuniquemos contigo confirmaremos tu pedido y metodo de pago.
+                    <hr class="payment-separator">
+
+                    <div class="payment-methods-wrapper">
+                        <h4 class="sub-block-title">Cuentas para Transferencia</h4>
+
+                        <div class="payment-simple-container">
+                            <div class="payment-row nequi-row">
+                                <div class="bank-brand">
+                                    <img src="imagenes/Nequi.png" alt="Nequi" class="mini-logo">
+                                    <span class="bank-text">NEQUI</span>
+                                </div>
+                                <div class="bank-details">
+                                    <span class="account-num">311 491 6142</span>
+                                    <span class="account-type">NÚMERO DE CUENTA</span>
+                                </div>
+                            </div>
+
+                            <div class="payment-row bancolombia-row">
+                                <div class="bank-brand">
+                                    <img src="imagenes/LogoBancolombia.png" alt="Bancolombia" class="mini-logo">
+                                    <span class="bank-text">BANCOLOMBIA</span>
+                                </div>
+                                <div class="bank-details">
+                                    <span class="account-num">912-049051-40</span>
+                                    <span class="account-type">AHORROS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="final-note">
+                        * Una vez nos comuniquemos contigo confirmaremos tu pedido y método de pago.
                     </p>
+
                 </div>
                 <div class="form-actions" style="text-align: center;">
                     <button type="submit" id="submit-btn" class="btn btn-gold"
@@ -200,6 +236,8 @@
             </div>
         </div>
     </div>
+
+
 
     <script src="script.js"></script>
 
@@ -252,7 +290,7 @@
         </div>
 
         <div class="footer-credits">
-            <p>Copyright © 2026 **Lumara** – Todos los derechos reservados.</p>
+            <p>Copyright © 2026 Lumara – Todos los derechos reservados.</p>
         </div>
     </footer>
 

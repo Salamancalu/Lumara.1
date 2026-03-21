@@ -224,3 +224,4 @@ function cerrarModal() {
     const modal = document.getElementById('modal-exito');
     if (modal) modal.style.display = 'none';
 }
+
