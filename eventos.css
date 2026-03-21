@@ -822,4 +822,23 @@ textarea[name="observaciones"] {
         bottom: -10px;
         right: 5%;
     }
+    
+/* 3. RESPONSIVE (CELULARES) - Aquí es donde se ponen uno encima de otro */
+@media (max-width: 768px) {
+    .subcategoria-item>div {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: none !important;
+    }
+
+    .subcategoria-item select,
+    .subcategoria-item input {
+        width: 100% !important;
+        margin-bottom: 5px;
+    }
 }
+
+
+
+}
+
