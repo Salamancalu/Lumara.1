@@ -36,14 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. INYECTAR los datos
     contenedor.innerHTML = html;
     subtotalTxt.innerText = `$ ${subtotalCalculado.toLocaleString('es-CO')}`;
-    
+
     // Sumar envío (ejemplo $10.000)
-    const envio = 10000; 
+    const envio = 10000;
     totalTxt.innerText = `$ ${(subtotalCalculado + envio).toLocaleString('es-CO')}`;
 });
 
 // 4. ADICIÓN: Capturar el envío del formulario y mandarlo a WhatsApp
-document.getElementById('checkout-form').addEventListener('submit', function(e) {
+document.getElementById('checkout-form').addEventListener('submit', function (e) {
     e.preventDefault(); // Evita que la página se recargue
 
     // A. OBTENER los datos del formulario (Datos Personales y de Entrega)
@@ -51,12 +51,14 @@ document.getElementById('checkout-form').addEventListener('submit', function(e) 
     const nombre = formData.get('nombre') + " " + formData.get('apellido');
     const telefono = formData.get('tel1');
     const email = formData.get('email');
+    const radioFactura = document.querySelector('input[name="factura"]:checked');
+    const factura = radioFactura ? (radioFactura.value === 'si' ? 'Sí, con factura' : 'No, sin factura') : 'No especificado';
     const depto = formData.get('departamento');
     const municipio = formData.get('municipio');
     const direccion = formData.get('direccion');
     const barrio = formData.get('barrio');
     const observaciones = formData.get('observaciones') || 'Ninguna';
-    
+
     // Obtener el valor del envío seleccionado (Bogotá u Otro)
     const costoEnvio = parseInt(formData.get('envio')) || 0;
     const metodoEnvio = costoEnvio > 0 ? 'Estándar Bogotá' : 'Contra entrega (Fuera de Bogotá)';
@@ -64,7 +66,7 @@ document.getElementById('checkout-form').addEventListener('submit', function(e) 
     // B. LEER el carrito nuevamente para tener los productos actualizados
     const jsonCarrito = localStorage.getItem('carritoLumara');
     const carrito = JSON.parse(jsonCarrito) || [];
-    
+
     if (carrito.length === 0) {
         alert("Tu carrito está vacío.");
         return;
@@ -76,16 +78,16 @@ document.getElementById('checkout-form').addEventListener('submit', function(e) 
     mensaje += ` Nombre: ${nombre}\n`;
     mensaje += ` Teléfono: ${telefono}\n`;
     mensaje += ` Email: ${email}\n\n`;
-    
     mensaje += `*--- Datos de Entrega ---*\n`;
     mensaje += ` Ubicación: ${municipio}, ${depto}\n`;
     mensaje += ` Dirección: ${direccion}\n`;
     mensaje += ` Barrio: ${barrio}\n`;
     mensaje += ` Método: ${metodoEnvio}\n`;
     mensaje += ` Obs: ${observaciones}\n\n`;
+    mensaje += `*Factura: ${factura}*\n\n`;
 
     mensaje += `*--- Detalle del Pedido ---*\n`;
-    
+
     let subtotal = 0;
     carrito.forEach((item, index) => {
         const itemTotal = item.precio * item.cantidad;
@@ -96,7 +98,7 @@ document.getElementById('checkout-form').addEventListener('submit', function(e) 
     });
 
     const totalFinal = subtotal + costoEnvio;
-    
+
     mensaje += `\n*-------------------------*\n`;
     mensaje += `Subtotal: $ ${subtotal.toLocaleString('es-CO')}\n`;
     mensaje += `Envío: $ ${costoEnvio.toLocaleString('es-CO')}\n`;
@@ -104,9 +106,9 @@ document.getElementById('checkout-form').addEventListener('submit', function(e) 
 
     // D. ENVIAR el mensaje a WhatsApp
     // Reemplaza con tu número de teléfono de Lumara (ejemplo: 573001234567)
-    const numeroWhatsApp = '573114916142'; 
+    const numeroWhatsApp = '573114916142';
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-    
+
     // Opcional: Vaciar el carrito después de enviar
     localStorage.removeItem('carritoLumara');
 
