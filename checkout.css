@@ -23,7 +23,10 @@ body {
     color: var(--text);
     line-height: 1.5;
     padding: 20px;
+    padding: 10px; /* Menos espacio en los bordes para móviles */
+    overflow-x: hidden; /* Evita el scroll horizontal molesto */
 }
+
 
 /* ==========================================
    2. ESTRUCTURA Y LAYOUT RESPONSIVE
@@ -357,4 +360,20 @@ textarea {
     font-weight: 600;
     color: var(--text);
     letter-spacing: 0.5px;
+}
+@media (max-width: 850px) {
+    .checkout-layout {
+        display: flex;
+        flex-direction: column; /* Apila todo */
+    }
+
+    .col-resumen {
+        order: -1; /* Sube el resumen al principio */
+        margin-bottom: 20px;
+    }
+}
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
 }
