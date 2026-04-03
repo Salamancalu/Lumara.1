@@ -4,9 +4,14 @@ let carrito = JSON.parse(localStorage.getItem('carritoLumara')) || [];
 
 // 2. Configuración de Aromas Disponibles (Basado en tu HTML)
 const AROMAS_DISPONIBLES = [
-    "Mango", "Coco", "Chocolate", "Frutos rojos", "Fresas con chocolate",
+    "Escoje tu aroma", "Mango", "Coco", "Chocolate", "Frutos rojos", "Fresas con chocolate",
     "Sándalo", "Bambú", "Galleta", "Vainilla", "Coco vainilla",
     "Lavanda", "Jazmín", "Maracuyá", "Canela", "Baby"
+];
+
+// Aromas exclusivos para velas de masaje
+const AROMAS_MASAJE = [
+    "Escoje tu aroma", "Velvet Blush", "Citrus Spa", "Passion Zen", "Chocozen", "Leche de coco"
 ];
 
 // 3. Capturar clics en los botones de "Agregar al carrito"
@@ -20,7 +25,7 @@ document.addEventListener('click', (e) => {
             nombre: btn.dataset.nombre,
             precio: parseInt(btn.dataset.precio),
             imagen: btn.dataset.imagen,
-            aroma: "Mango", // Aroma inicial por defecto
+            aroma: "Escoje tu aroma", // Aroma inicial por defecto
             cantidad: 1
         };
 
@@ -35,53 +40,6 @@ function agregarAlCarrito(producto) {
     abrirCarrito();
 }
 
-// 5. Renderizar (Dibujar) el Carrito con la armonía de la imagen
-function renderizarCarrito() {
-    const contenedor = document.getElementById('lista-carrito');
-    const totalTxt = document.getElementById('total-carrito');
-    const subtotalTxt = document.getElementById('subtotal-valor');
-
-    let htmlGenerado = '';
-    let sumaTotal = 0;
-
-    carrito.forEach((item, index) => {
-        sumaTotal += item.precio * item.cantidad;
-
-        // Generamos las opciones del select dinámicamente
-        const opciones = AROMAS_DISPONIBLES.map(a =>
-            `<option value="${a}" ${item.aroma === a ? 'selected' : ''}>${a}</option>`
-        ).join('');
-
-        htmlGenerado += `
-            <div class="item-carrito">
-                <img src="${item.imagen}" class="img-carrito">
-                <div class="info-item">
-                    <div class="fila-superior">
-                        <span class="nombre-item">${item.nombre}</span>
-                        <span class="eliminar-x" onclick="eliminarItem(${index})">&times;</span>
-                    </div>
-
-                    <select class="select-aroma" onchange="cambiarAroma(${index}, this.value)">
-                        ${opciones}
-                    </select>
-
-                    <div class="fila-inferior">
-                        <span class="precio-vino">$ ${item.precio.toLocaleString('es-CO')}</span>
-                        <div class="capsula-cantidad">
-                            <button onclick="modificarCantidad(${index}, -1)">-</button>
-                            <input type="text" value="${item.cantidad}" readonly>
-                            <button onclick="modificarCantidad(${index}, 1)">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-
-    contenedor.innerHTML = htmlGenerado;
-    totalTxt.innerText = `$ ${sumaTotal.toLocaleString('es-CO')}`;
-    subtotalTxt.innerText = `$ ${sumaTotal.toLocaleString('es-CO')}`;
-}
 
 // 6. Funciones de Control
 function modificarCantidad(index, cambio) {
@@ -173,50 +131,54 @@ function renderizarCarrito() {
 
     carrito.forEach((item, index) => {
         sumaTotal += item.precio * item.cantidad;
-        totalUnidades += item.cantidad; // Sumamos cada unidad
+        totalUnidades += item.cantidad;
 
-        const opciones = AROMAS_DISPONIBLES.map(a =>
+        // Lógica de excepción para Velas de Masaje
+        const esVelaMasaje = item.nombre.includes("Velas de masaje 90g") || item.nombre.includes("Velas de masaje 60g");
+        const listaAromas = esVelaMasaje ? AROMAS_MASAJE : AROMAS_DISPONIBLES;
+
+        const opciones = listaAromas.map(a =>
             `<option value="${a}" ${item.aroma === a ? 'selected' : ''}>${a}</option>`
         ).join('');
 
         htmlGenerado += `
-            <div class="item-carrito">
-                <img src="${item.imagen}" class="img-carrito">
-                <div class="info-item">
-                    <div class="fila-superior">
-                        <span class="nombre-item">${item.nombre}</span>
-                        <span class="eliminar-x" onclick="eliminarItem(${index})">&times;</span>
-                    </div>
-                    <select class="select-aroma" onchange="cambiarAroma(${index}, this.value)">
-                        ${opciones}
-                    </select>
-                    <div class="fila-inferior">
-                        <span class="precio-vino">$ ${item.precio.toLocaleString('es-CO')}</span>
-                        <div class="capsula-cantidad">
-                            <button onclick="modificarCantidad(${index}, -1)">-</button>
-                            <input type="text" value="${item.cantidad}" readonly>
-                            <button onclick="modificarCantidad(${index}, 1)">+</button>
-                        </div>
+        <div class="item-carrito">
+            <img src="${item.imagen}" class="img-carrito">
+            <div class="info-item">
+                <div class="fila-superior">
+                    <span class="nombre-item">${item.nombre}</span>
+                    <span class="eliminar-x" onclick="eliminarItem(${index})">&times;</span>
+                </div>
+                <select class="select-aroma" onchange="cambiarAroma(${index}, this.value)">
+                    ${opciones}
+                </select>
+                <div class="fila-inferior">
+                    <span class="precio-vino">$ ${item.precio.toLocaleString('es-CO')}</span>
+                    <div class="capsula-cantidad">
+                        <button onclick="modificarCantidad(${index}, -1)">-</button>
+                        <input type="text" value="${item.cantidad}" readonly>
+                        <button onclick="modificarCantidad(${index}, 1)">+</button>
                     </div>
                 </div>
             </div>
-        `;
+        </div>
+    `;
     });
 
+    // 3. Renderizado final (el resto de tu imagen)
     if (contenedor) contenedor.innerHTML = htmlGenerado;
     if (totalTxt) totalTxt.innerText = `$ ${sumaTotal.toLocaleString('es-CO')}`;
     if (subtotalTxt) subtotalTxt.innerText = `$ ${sumaTotal.toLocaleString('es-CO')}`;
 
-    // ACTUALIZA EL NÚMERO EN EL ICONO (La burbuja roja/gris del navbar)
     if (contador) {
         contador.innerText = totalUnidades;
     }
 }
 document.querySelectorAll('.btn-ver-mas').forEach(boton => {
-    boton.addEventListener('click', function() {
+    boton.addEventListener('click', function () {
         // Buscamos el artículo (product-item) que es el padre de todo
         const producto = this.closest('.product-item');
-        
+
         // Al añadir 'active' al artículo, tu CSS de .product-item.active .back-content se dispara solo
         producto.classList.toggle('active');
 
@@ -229,12 +191,12 @@ document.querySelectorAll('.btn-ver-mas').forEach(boton => {
     });
 });
 
-document.getElementById('btn-whatsapp').addEventListener('click', function() {
+document.getElementById('btn-whatsapp').addEventListener('click', function () {
     // 1. Capturamos el texto del área de observaciones
     const mensajeUsuario = document.getElementById('observaciones').value;
-    
+
     // 2. Tu número de teléfono (Ingresa el tuyo con el código de país, ej: 57 para Colombia)
-    const telefono = "573114916142"; 
+    const telefono = "573114916142";
 
     // 3. Verificamos que el usuario haya escrito algo antes de enviar
     if (mensajeUsuario.trim() === "") {
@@ -247,7 +209,7 @@ document.getElementById('btn-whatsapp').addEventListener('click', function() {
 
     // 5. Generamos el enlace y abrimos la pestaña de WhatsApp
     const url = `https://wa.me/${telefono}?text=${textoFinal}`;
-    
+
     window.open(url, '_blank');
 });
 
@@ -259,10 +221,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Función para alternar el menú
     hamburger.addEventListener('click', () => {
         const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-        
+
         // Alternamos la clase 'active' para mostrar/ocultar en CSS
         navLinks.classList.toggle('active');
-        
+
         // Actualizamos el atributo de accesibilidad
         hamburger.setAttribute('aria-expanded', !isExpanded);
     });
@@ -279,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Cerrar el menú si se hace clic fuera de él
     document.addEventListener('click', (event) => {
         const isClickInside = navLinks.contains(event.target) || hamburger.contains(event.target);
-        
+
         if (!isClickInside && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             hamburger.setAttribute('aria-expanded', 'false');
