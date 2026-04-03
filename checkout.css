@@ -245,14 +245,20 @@ textarea {
     cursor: pointer;
 }
 
-/* === MEDIA QUERY PARA RESPONSIVIDAD (MÓVILES) === */
-@media (max-width: 600px) {
-    /* Mantiene las opciones en columna y al centro en móvil */
-    .opciones-radio-central {
-        gap: 8px; /* Espacio más compacto en móvil */
+/* --- RESPONSIVO: CELULAR --- */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        /* 2 columnas en tablet */
     }
 }
 
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr !important;
+        /* 1 columna en celular */
+    }
+}
 
 /* Contenedor del método de entrega */
 .metodo-entrega {
