@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - Lumara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+
+    <div class="checkout-container">
+        <button onclick="history.back()" class="btn-volver">← VOLVER ATRÁS</button>
+
+        <div class="checkout-layout">
+            <form id="checkout-form" class="col-formulario">
+
+                <div class="caja-checkout">
+                    <h3>1. DATOS PERSONALES</h3>
+                    <div class="grid-2">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="text" name="apellido" placeholder="Apellido" required>
+                    </div>
+                    <div class="grid-2">
+                        <input type="tel" name="tel1" placeholder="Teléfono Principal" required>
+                        <input type="tel" name="tel2" placeholder="Teléfono Alternativo">
+                    </div>
+                    <input type="email" name="email" placeholder="Correo Electrónico" required>
+
+                    <div class="pregunta-factura-central">
+                        <span>¿Deseas Factura Electrónica?</span>
+
+                        <div class="opciones-radio-central">
+                            <label>
+                                <input type="radio" name="factura" value="si">
+                                <span>Sí</span>
+                        
+                                <input type="radio" name="factura" value="no" checked>
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="caja-checkout">
+                    <h3>2. DATOS DE ENTREGA</h3>
+                    <div class="grid-2">
+                        <select name="departamento" id="depto" required>
+                            <option value="">Departamento</option>
+                            <option value="Cundinamarca">Cundinamarca</option>
+                        </select>
+                        <select name="municipio" id="muni" required>
+                            <option value="">Municipio</option>
+                            <option value="Bogota">Bogota</option>
+                            <option value="Chia">Chia</option>
+                            <option value="Zipaquirá">Zipaquirá</option>
+                            <option value="Cogua">Cogua</option>
+                            <option value="Cota">Cota</option>
+                            <option value="Gachancipá">Gachancipá</option>
+                            <option value="Nemocón">Nemocón</option>
+                            <option value="Sopó">Sopó</option>
+                            <option value="Tabio">Tabio</option>
+                            <option value="Tenjo">Tenjo</option>
+                            <option value="Tocancipá">Tocancipá</option>
+                    
+                        </select>
+                    </div>
+                    <input type="text" name="direccion" placeholder="Dirección" required>
+                    <input type="text" name="info_adicional" placeholder="Info Adicional (Torre, Apto, Conjunto)">
+                    <input type="text" name="barrio" placeholder="Barrio" required>
+                    <input type="text" name="quien_recibe" placeholder="Nombre de quien recibe" required>
+                    <textarea name="observaciones" placeholder="Observaciones (Ej: Si es urgente)"></textarea>
+
+                    <h4>MÉTODO DE ENTREGA</h4>
+                    <div class="metodo-entrega">
+                        <label class="opcion-envio">
+                            <input type="radio" name="envio" value="10000" checked onchange="actualizarEnvio(10000)">
+                            Entrega Estándar Bogotá ($10.000)
+                        </label>
+                        <label class="opcion-envio">
+                            <input type="radio" name="envio" value="0" onchange="actualizarEnvio(0)">
+                            Fuera de Bogotá (Contra entrega con transportadora)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="caja-checkout">
+                    <h3>3. MEDIOS DE PAGO DISPONIBLES</h3>
+
+                    <div class="logos-pago-unificados">
+                        <div class="metodo-item">
+                            <img src="imagenes/Nequi.png" alt="Nequi" class="icon-pago">
+                            <span>Nequi</span>
+                        </div>
+                        <div class="metodo-item">
+                            <img src="imagenes/LogoBancolombia.png" alt="Bancolombia" class="icon-pago">
+                            <span>Bancolombia</span>
+                        </div>
+                    </div>
+                </div> <button type="submit" class="btn-enviar-pedido">ENVIAR PEDIDO</button>
+            </form>
+
+            <div class="col-resumen">
+                <div class="caja-checkout">
+                    <h3>RESUMEN DE LA COMPRA</h3>
+                    <div id="resumen-productos">
+                    </div>
+                    <div class="totales-finales">
+                        <p>Subtotal: <span id="resumen-subtotal">$ 0</span></p>
+
+                        <hr>
+                        <p class="total-final">TOTAL: <span id="resumen-total">$ 0</span></p>
+                        <p class="nota-tiempo">
+                            "Nuestras piezas se elaboran bajo pedido. Agradecemos programar tu entrega con 15 días de
+                            antelación. Si requieres un pedido urgente, por favor especifícalo en la sección de
+                            observaciones."
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todas las Colecciones | Lumara</title>
+    <link rel="stylesheet" href="colecciones.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-area">
+                <img src="imagenes/Logo-lumara.png" alt="Lumara Logo" class="main-logo">
+                <div class="brand-text">
+                    <span class="brand-name">Lumara</span>
+                    <span class="slogan">LUZ Y AROMA QUE ABRAZAN</span>
+                </div>
+            </a>
+
+            <div class="carrito-header-container" id="abrir-carrito">
+                <a href="#" class="carrito-link">
+                    <svg class="icono-carrito-svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="#4a4a4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="contador-carrito" class="contador-badge">0</span>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+        <section class="hero-coleccion">
+            <div class="contenedor-navegacion">
+                <a href="index.html" class="link-retroceso">
+                    <i class="fas fa-chevron-left"></i> Volver al Inicio
+                </a>
+            </div>
+
+            <div class="contenido-encabezado">
+                <span class="tagline">COLECCION COMPLETA</span>
+                <div class="separador-dorado"></div>
+             
+            </div>
+        </section>
+        <section class="product-grid-section">
+            <div class="product-grid">
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/Iced Coffee.jpeg" class="foto active">
+
+                        </div>
+
+                        <div class="back-content">
+                            <p class="description">Vela con diseño de bebida con hielo
+                                aroma a elección, incluye empaque premium.
+                            </p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 12cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Ice Coffee</h3>
+
+                        <p class="price">$ 35.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+
+                        <button class="btn-agregar" data-id="ice-coffee-01" data-nombre="Vela Ice Coffee"
+                            data-precio="35000" data-imagen="imagenes/Iced Coffee.jpeg" onclick="añadirAlCarrito(this)">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/postre-frutos-rojos.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Vela artesanal con diseño de postre y aroma frutal intenso.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 10cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Postre frutos rojos</h3>
+                        <p class="price">$ 25.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="postre-frutos-rojos-01"
+                            data-nombre="Vela Postre frutos rojos" data-precio="25000"
+                            data-imagen="imagenes/postre-frutos-rojos.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/postre-crema.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Delicioso diseño con textura de crema batida y fragancia dulce.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 10cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Postre con crema</h3>
+                        <p class="price">$ 30.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="postre-crema-01" data-nombre="Vela Postre con crema"
+                            data-precio="30000" data-imagen="imagenes/postre-crema.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/copa-helado.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Vela creativa en copa con aroma a chocolate y vainilla.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 14cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Copa de helado</h3>
+                        <p class="price">$ 37.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="copa-helado-01" data-nombre="Vela Copa de helado"
+                            data-precio="37000" data-imagen="imagenes/copa-helado.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/guacal-azul.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Set de regalo con pebetero y waxmelts artesanales.</p>
+                            <div class="details-list">
+                                <p><strong>Incluye:</strong> Pebetero Azul</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Guacal rosas con pebetero (Azul)</h3>
+                        <p class="price">$ 75.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="guacal-azul-01"
+                            data-nombre="Guacal rosas con pebetero (Azul)" data-precio="75000"
+                            data-imagen="imagenes/guacal-azul.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/guacal-rosa.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Set de regalo con pebetero rosa y waxmelts de larga duración.</p>
+                            <div class="details-list">
+                                <p><strong>Incluye:</strong> Pebetero Rosa</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Guacal rosas con pebetero (Rosa)</h3>
+                        <p class="price">$ 75.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="guacal-rosa-01"
+                            data-nombre="Guacal rosas con pebetero (Rosa)" data-precio="75000"
+                            data-imagen="imagenes/guacal-rosa.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/bouquet-margaritas.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Arreglo floral mixto en cera de soja artesanal.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Grande</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Bouquet rosas y margaritas</h3>
+                        <p class="price">$ 80.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="b-01" data-nombre="Bouquet rosas y margaritas"
+                            data-precio="80000" data-imagen="imagenes/bouquet-margaritas.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/bouquet-girasoles.png" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Diseño especial con girasoles y figura religiosa detallada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Grande</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Bouquet girasoles y virgen</h3>
+                        <p class="price">$ 75.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="bouquet-girasoles-virgen"
+                            data-nombre="Bouquet girasoles y virgen" data-precio="75000"
+                            data-imagen="imagenes/bouquet-girasoles.png">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/peonias.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Sofisticado ramo de peonías con fragancia floral premium.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Grande</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Bouquet peonias</h3>
+                        <p class="price">$ 85.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="peonias-01" data-nombre="Bouquet peonias"
+                            data-precio="85000" data-imagen="imagenes/peonias.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/rosas-pequenas.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Tierno detalle de rosas miniatura en cera.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Pequeño</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Bouquet Rosas Pequeñas</h3>
+                        <p class="price">$ 35.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="rosas-pequenas-01" data-nombre="Bouquet Rosas Pequeñas"
+                            data-precio="35000" data-imagen="imagenes/rosas-pequenas.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/masaje-90g.png" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Aceites esenciales que nutren la piel al derretirse.</p>
+                            <div class="details-list">
+                                <p><strong>Peso:</strong> 90g</p>
+                                <p><strong>Aromas:</strong> Velvet Blush,
+                                    Citrus Spa,
+                                    Passion Zen,
+                                    Chocozen,
+                                    Leche de coco</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Velas de masaje 90g</h3>
+                        <p class="price">$ 30.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="masaje-90g" data-nombre="Velas de masaje 90g"
+                            data-precio="30000" data-imagen="imagenes/masaje-90g.png">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/masaje-60g.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Vela terapéutica compacta para hidratación profunda.</p>
+                            <div class="details-list">
+                                <p><strong>Peso:</strong> 60g</p>
+                                <p><strong>Aromas:</strong> Velvet Blush,
+                                    Citrus Spa,
+                                    Passion Zen,
+                                    Chocozen,
+                                    Leche de coco</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Velas de masaje 60g</h3>
+                        <p class="price">$ 25.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="masaje-60g" data-nombre="Velas de masaje 60g"
+                            data-precio="25000" data-imagen="imagenes/masaje-60g.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/margarita-aromatica.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Fragancia intensa en forma de flor margarita.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 8cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Aromática Margarita</h3>
+                        <p class="price">$ 12.500</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="margarita-aromatica" data-nombre="Vela Aromática Margarita"
+                            data-precio="12500" data-imagen="imagenes/margarita-aromatica.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+
+                
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/cerveza.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Diseño hiperrealista con espuma detallada y aroma amaderado.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 15cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Cerveza</h3>
+                        <p class="price">$ 60.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-cerveza" data-nombre="Vela Cerveza"
+                            data-precio="60000" data-imagen="imagenes/cerveza.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/margarita-coctel.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Inspirada en el cóctel, con fragancia cítrica y refrescante.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 12cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Martini</h3>
+                        <p class="price">$ 37.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-martini" data-nombre="Vela Martini"
+                            data-precio="37000" data-imagen="imagenes/margarita-coctel.jpeg">
+                            Agregar al carrito
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/leon.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Figura infantil adorable para decoración o regalo.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Pequeño</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Pequeña León</h3>
+                        <p class="price">$ 6.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-leon" data-nombre="Vela Pequeña León"
+                            data-precio="6000" data-imagen="imagenes/leon.jpeg">
+                            Agregar al carrito
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/oso-rosas.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Oso esculpido totalmente en pequeñas rosas de cera.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 10cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Oso de Rosas</h3>
+                        <p class="price">$ 12.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-oso-rosas" data-nombre="Vela Oso de Rosas"
+                            data-precio="12000" data-imagen="imagenes/oso-rosas.jpeg">
+                            Agregar al carrito
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/osito-recordatorio.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Vela pequeña ideal para eventos y recordatorios.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mini</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Recordatorio Osito</h3>
+                        <p class="price">$ 12.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-recordatorio-osito"
+                            data-nombre="Vela Recordatorio Osito" data-precio="12000"
+                            data-imagen="imagenes/osito-recordatorio.jpeg">
+                            Agregar al carrito
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/grado.jpeg" class="foto active">
+                            <img src="imagenes/grado.3.jpeg" class="foto">
+                            <img src="imagenes/grado.1.2.jpeg" alt="foto">
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Detalle especial para celebrar logros académicos.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 9cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Recordatorio Grado</h3>
+                        <p class="price">$ 14.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-recordatorio-grado"
+                            data-nombre="Vela Recordatorio Grado" data-precio="14000" data-imagen="imagenes/grado.jpeg">
+                            Agregar al carrito
+                        </button>
+
+                    </div>
+                </article>
+
+
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/burbuja-3x3.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Vela tendencia aesthetic ideal para decoración moderna.</p>
+                            <div class="details-list">
+                                <p><strong>Medidas:</strong> 6x6 cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Burbuja 3x3</h3>
+                        <p class="price">$ 12.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-burbuja-3x3" data-nombre="Vela Burbuja 3x3"
+                            data-precio="12000" data-imagen="imagenes/burbuja-3x3.jpeg">
+                            Agregar al carrito
+                        </button>
+
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/burbuja-2x2.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Versión mini de nuestra popular vela burbuja.</p>
+                            <div class="details-list">
+                                <p><strong>Medidas:</strong> 4x4 cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Burbuja 2x2</h3>
+                        <p class="price">$ 6.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-burbuja-2x2" data-nombre="Vela Burbuja 2x2"
+                            data-precio="6000" data-imagen="imagenes/burbuja-2x2.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/arcoiris.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Diseño alegre y colorido para espacios creativos.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 8cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Arcoiris</h3>
+                        <p class="price">$ 15.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-arcoiris" data-nombre="Vela Arcoiris"
+                            data-precio="15000" data-imagen="imagenes/arcoiris.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/corazon-rosas.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Tierno corazón compuesto por minúsculas flores.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mini</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Corazón de Rosas Pequeño</h3>
+                        <p class="price">$ 4.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-corazon-rosas-pequeno"
+                            data-nombre="Vela Corazón de Rosas Pequeño" data-precio="4000"
+                            data-imagen="imagenes/corazon-rosas.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/rosa-001.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Vela clásica en forma de rosa abierta detallada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 6cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Rosa REF 001</h3>
+                        <p class="price">$ 7.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-rosa-ref-001" data-nombre="Vela Rosa REF 001"
+                            data-precio="7000" data-imagen="imagenes/rosa-001.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/peonia-simple.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Flor individual modelada con gran realismo.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 8cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Peonia</h3>
+                        <p class="price">$ 10.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-peonia" data-nombre="Vela Peonia" data-precio="10000"
+                            data-imagen="imagenes/peonia-simple.jpeg">
+                            Agregar al carrito
+                        </button>
+
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/rosa-002.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Diseño alternativo de rosa con pétalos cerrados.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 7cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Rosa REF 002</h3>
+                        <p class="price">$ 10.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-rosa-ref-002" data-nombre="Vela Rosa REF 002"
+                            data-precio="10000" data-imagen="imagenes/rosa-002.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/tulipanes.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Elegancia clásica en forma de tulipán primaveral.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 12cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Tulipanes</h3>
+                        <p class="price">$ 12.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-tulipanes" data-nombre="Vela Tulipanes"
+                            data-precio="12000" data-imagen="imagenes/tulipanes.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/huellita.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Pequeño detalle ideal para amantes de las mascotas.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 5cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Huellita</h3>
+                        <p class="price">$ 6.500</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-huellita" data-nombre="Vela Huellita"
+                            data-precio="6500" data-imagen="imagenes/huellita.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/corazon-te-amo.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">El regalo perfecto para expresar sentimientos especiales.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 8cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Corazón "TE AMO"</h3>
+                        <p class="price">$ 12.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-corazon-te-amo" data-nombre="Vela Corazón TE AMO"
+                            data-precio="12000" data-imagen="imagenes/corazon-te-amo.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/mariposa.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Delicada figura de mariposa con detalles realistas.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 7cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Mariposa</h3>
+                        <p class="price">$ 10.500</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-mariposa" data-nombre="Vela Mariposa"
+                            data-precio="10500" data-imagen="imagenes/mariposa.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/bulldog.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Figura detallada para amantes de esta raza.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 9cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Perro Bull Dog</h3>
+                        <p class="price">$ 12.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-bulldog" data-nombre="Vela Perro Bull Dog"
+                            data-precio="12000" data-imagen="imagenes/bulldog.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/corazon-love.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Diseño moderno de corazón con tipografía integrada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 8cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Corazón I LOVE</h3>
+                        <p class="price">$ 10.500</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-corazon-love" data-nombre="Vela Corazón I LOVE"
+                            data-precio="10500" data-imagen="imagenes/corazon-love.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                 <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/vela-sagrada-familia-huevo-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Sagrada Familia</h3>
+                        <p class="price">$ 12.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-sagrada-familia" data-nombre="Vela Sagrada Familia"
+                            data-precio="12000" data-imagen="imagenes/vela-sagrada-familia-huevo-1.jpeg">
+                            Agregar al carrito
+                        </button>
+
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/virgen-guadalupe-7cm-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Pequeña (7 cm)</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Virgen de Guadalupe 7 cm</h3>
+                        <p class="price">$ 7.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="virgen-guadalupe-7cm"
+                            data-nombre="Virgen de Guadalupe 7 cm" data-precio="7000"
+                            data-imagen="imagenes/virgen-guadalupe-7cm-1.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/vela-virgen-maria-nino-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Virgen María con Niño Jesús</h3>
+                        <p class="price">$ 12.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-virgen-maria-nino"
+                            data-nombre="Vela Virgen María con Niño Jesús" data-precio="12000"
+                            data-imagen="imagenes/vela-virgen-maria-nino-1.jpeg">
+                            Agregar al carrito
+                        </button>
+
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/vela-angelito-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Angelito</h3>
+                        <p class="price">$ 6.500</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-angelito" data-nombre="Vela Angelito"
+                            data-precio="6500" data-imagen="imagenes/vela-angelito-1.jpeg">
+                            Agregar al carrito
+                        </button>
+
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/vela-sagrada-familia-huevo-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Sagrada Familia Huevo</h3>
+                        <p class="price">$ 10.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-sagrada-familia-huevo"
+                            data-nombre="Vela Sagrada Familia Huevo" data-precio="10000"
+                            data-imagen="imagenes/vela-sagrada-familia-huevo-1.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/vela-rostro-cristo-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Rostro Cristo</h3>
+                        <p class="price">$ 14.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-rostro-cristo" data-nombre="Vela Rostro Cristo"
+                            data-precio="14000" data-imagen="imagenes/vela-rostro-cristo-1.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/velon-cristo-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Grande (Velón)</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Velón Cristo</h3>
+                        <p class="price">$ 20.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="velon-cristo" data-nombre="Velón Cristo"
+                            data-precio="20000" data-imagen="imagenes/velon-cristo-1.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/vela-angelito-mini-1.png" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mini</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Angelito Mini</h3>
+                        <p class="price">$ 9.500</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-angelito-mini" data-nombre="Vela Angelito Mini"
+                            data-precio="9500" data-imagen="imagenes/vela-angelito-mini-1.png">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/velas-intenciones-onduladas-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano (Set de 6)</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Velas Intenciones Onduladas x 6</h3>
+                        <p class="price">$ 15.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="velas-intenciones-onduladas"
+                            data-nombre="Velas Intenciones Onduladas x 6" data-precio="15000"
+                            data-imagen="imagenes/velas-intenciones-onduladas-1.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/velas-intenciones-onduladas-2.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano (Set de 6)</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Velas Intenciones Arbolito x 6</h3>
+                        <p class="price">$ 18.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="velas-intenciones-arbolito"
+                            data-nombre="Velas Intenciones Arbolito x 6" data-precio="18000"
+                            data-imagen="imagenes/velas-intenciones-onduladas-2.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/combo-reno-arbol-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Grande (Combo)</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Combo Reno y Árbol</h3>
+                        <p class="price">$ 45.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="combo-reno-arbol" data-nombre="Combo Reno y Árbol"
+                            data-precio="45000" data-imagen="imagenes/combo-reno-arbol-1.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/velas-intenciones-arbolito-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Arbolito Navideño</h3>
+                        <p class="price">$ 12.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-arbolito-navideno"
+                            data-nombre="Vela Arbolito Navideño" data-precio="12000"
+                            data-imagen="imagenes/velas-intenciones-arbolito-1.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/vela-pesebre-coqueto-1.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Pesebre Coqueto</h3>
+                        <p class="price">$ 10.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-pesebre-coqueto" data-nombre="Vela Pesebre Coqueto"
+                            data-precio="10000" data-imagen="imagenes/vela-pesebre-coqueto-1.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/vela pesebre mediano.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Pesebre Mediano</h3>
+                        <p class="price">$ 18.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-pesebre-mediano" data-nombre="Vela Pesebre Mediano"
+                            data-precio="18000" data-imagen="imagenes/vela-pesebre-mediano.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/Vela Burbuja 6x6 con Hojita.jpeg" class="foto active">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> 6x6 cm</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Burbuja 6x6 con Hojita</h3>
+                        <p class="price">$ 12.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-burbuja-hojita"
+                            data-nombre="Vela Burbuja 6x6 con Hojita" data-precio="12000"
+                            data-imagen="imagenes/Vela Burbuja 6x6 con Hojita.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-item">
+                    <div class="image-container">
+                        <div class="carrusel-fotos">
+                            <img src="imagenes/VELA renito.jpeg" class="foto active">
+                            <img src="imagenes/VELA renito 2.jpeg" class="foto">
+
+                        </div>
+                        <div class="back-content">
+                            <p class="description">Edición especial para festividades con diseño de temporada.</p>
+                            <div class="details-list">
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Aromas:</strong> Mango, Coco, Chocolate, Frutos rojos, Fresas con chocolate,
+                                    Sándalo, Bambú, Galleta, Vainilla, Coco vainilla, Lavanda, Jazmín, Maracuyá, Canela,
+                                    Baby.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info-block">
+                        <h3>Vela Renito</h3>
+                        <p class="price">$ 15.000</p>
+                        <button class="btn-ver-mas">Ver más</button>
+                        <button class="btn-agregar" data-id="vela-renito" data-nombre="Vela Renito" data-precio="15000"
+                            data-imagen="imagenes/VELA renito.jpeg">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <footer class="footer-lumara">
+            <div class="footer-container">
+                <div class="footer-col brand-col">
+                    <span class="brand-name">Lumara</span>
+                    <p class="slogan-footer">Luz y aroma que abrazan</p>
+                    <div class="legal-info">
+                        <p class="legal-badge">🧾 Factura Electrónica</p>
+                        <p class="legal-badge">🏢 Registro de Comercio</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Políticas</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Envíos y Devoluciones</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Ayuda</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Cuidado de Velas</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Síguenos</h3>
+                    <div class="social-row">
+                        <a href="#" class="social-item"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+                                alt="Instagram"></a>
+                        <a href="https://wa.me/573114916142" class="social-item"><img
+                                src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+                        <a href="https://www.facebook.com/TU_PERFIL" class="social-item" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+                        </a>
+
+                        <a href="https://www.tiktok.com/@TU_USUARIO" class="social-item" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+                        </a>
+                    </div>
+                    <p class="location-text">📍 Bogotá, Colombia</p>
+                </div>
+            </div>
+
+            <div class="footer-credits">
+                <p>Copyright © 2026 Lumara – Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </main>
+
+    <div id="carrito-sidebar" class="sidebar-lumara-final">
+        <div class="header-carrito">
+            <h2>TU CARRITO DE COMPRAS</h2>
+            <span id="cerrar-carrito" onclick="toggleCarrito()">&times;</span>
+        </div>
+
+        <div id="lista-carrito">
+        </div>
+
+        <div class="footer-sidebar">
+            <div class="fila-subtotal">
+                <span>Subtotal:</span>
+                <span id="subtotal-valor">$ 0</span>
+            </div>
+            <div class="fila-total">
+                <strong>Total:</strong>
+                <strong id="total-carrito">$ 0</strong>
+            </div>
+            <button type="button" onclick="irAlCheckout()" class="btn-pagar">
+                CONTINUAR CON LA COMPRA
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="carrito.js"></script>
+    <script src="checkout.js"></script>
+
+
+</body>
+
+</html>

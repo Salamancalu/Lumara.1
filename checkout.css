@@ -1,0 +1,354 @@
+/* ==========================================
+   1. VARIABLES Y BASE
+   ========================================== */
+:root {
+    --burgundy: #6b1414;
+    --gold: #b8935a;
+    --cream: #f8f6f2;
+    --white: #ffffff;
+    --text: #333333;
+    --gray-border: #e0e0e0;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cream);
+    color: var(--text);
+    line-height: 1.5;
+    padding: 20px;
+}
+
+/* ==========================================
+   2. ESTRUCTURA Y LAYOUT RESPONSIVE
+   ========================================== */
+.checkout-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px; /* Dos columnas en PC */
+    gap: 25px;
+    align-items: start;
+}
+
+/* Sistema de cuadros responsivos */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+/* Adaptación para Tablets y Celulares */
+@media (max-width: 850px) {
+    .checkout-layout {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+    
+    .col-resumen {
+        order: -1; /* El resumen de compra sale arriba en móvil */
+        position: static !important;
+    }
+
+    .checkout-container {
+        padding: 10px;
+    }
+}
+
+/* ==========================================
+   3. COMPONENTES (CAJAS E INPUTS)
+   ========================================== */
+.caja-checkout {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.btn-volver {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.btn-volver:hover {
+    color: var(--burgundy);
+}
+
+/* Estilo de los Cuadros (Inputs) - Letra más pequeña */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border: 1px solid var(--gray-border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.85rem; /* Tamaño de letra reducido y estético */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--gold); /* Toque dorado de Lumara al escribir */
+}
+
+textarea {
+    height: 70px;
+    resize: none;
+}
+
+/* Títulos de sección refinados */
+.caja-checkout h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--burgundy);
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 8px;
+}
+
+/* ==========================================
+   4. RESUMEN DE COMPRA
+   ========================================= */
+.col-resumen {
+    position: sticky;
+    top: 20px;
+}
+
+.checkout-product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.checkout-product-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.totales-finales {
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
+
+.totales-finales p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.total-final {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--burgundy);
+    border-top: 1px solid var(--gray-border);
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+/* ==========================================
+   5. BOTONES Y EXTRAS
+   ========================================== */
+.btn-enviar-pedido {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--burgundy);
+    color: var(--white);
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-enviar-pedido:hover {
+    background-color: #5a1010;
+    transform: translateY(-2px);
+}
+
+.nota-tiempo {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 15px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Contenedor principal para centralizar la pregunta */
+.pregunta-factura-central {
+    text-align: center; /* Centra el texto de la pregunta */
+    margin: 20px 0; /* Espacio arriba y abajo */
+    padding: 15px; /* Un poco de padding */
+    border-top: 1px solid #f9f9f9; /* Línea sutil divisoria */
+}
+
+/* Estilo del texto de la pregunta (más pequeña y fina) */
+.pregunta-factura-central > span {
+    display: block; /* Ocupa todo el ancho para centrar */
+    font-size: 0.85rem; /* Tamaño refinado y estético */
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px; /* Espacio antes de las opciones */
+    letter-spacing: 0.5px;
+}
+
+/* NUEVO CONTENEDOR PARA LAS OPCIONES (FLEXBOX CENTRAL VERTICAL) */
+.opciones-radio-central {
+    display: flex;
+    flex-direction: column; /* ¡ESTA ES LA LÍNEA CLAVE! Bajan y se ponen en columna */
+    align-items: center; /* Centrado horizontal perfecto de la columna */
+    gap: 10px; /* Espacio vertical entre el Sí y el No */
+}
+
+/* Estilo para los labels individuales de Sí/No */
+.pregunta-factura-central label {
+    display: flex;
+    align-items: center; /* Alinea el circulito con la palabra horizontalmente */
+    gap: 8px; /* Espacio entre el radio button y el texto */
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+/* El círculo se pone color vino al marcarlo (Identidad Lumara) */
+.pregunta-factura-central input[type="radio"] {
+    accent-color: var(--burgundy); /* Refuerza la marca Lumara */
+    cursor: pointer;
+}
+
+/* === MEDIA QUERY PARA RESPONSIVIDAD (MÓVILES) === */
+@media (max-width: 600px) {
+    /* Mantiene las opciones en columna y al centro en móvil */
+    .opciones-radio-central {
+        gap: 8px; /* Espacio más compacto en móvil */
+    }
+}
+
+
+/* Contenedor del método de entrega */
+.metodo-entrega {
+    margin-top: 20px;
+    display: grid;
+    gap: 10px;
+}
+
+.metodo-entrega h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--burgundy);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Tarjetas de opción */
+.opcion-envio {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border: 1px solid var(--gray-border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    font-size: 0.85rem;
+}
+
+/* Efecto cuando pasas el mouse o está seleccionado */
+.opcion-envio:hover {
+    border-color: var(--gold);
+    background-color: #fcfaf7;
+}
+
+/* Espacio entre el radio button y el texto */
+.opcion-envio input[type="radio"] {
+    margin-right: 12px;
+    accent-color: var(--burgundy);
+    cursor: pointer;
+}
+
+/* Ajuste para que el texto largo no se rompa feo en móvil */
+.opcion-envio span {
+    line-height: 1.3;
+    color: var(--text);
+}
+
+
+
+/* Texto de la nota de tiempo debajo del botón */
+.nota-tiempo {
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #000000;
+    margin-top: 15px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Unifica la sección dentro de la caja blanca */
+.caja-checkout {
+    /* ... tus otros estilos ... */
+    margin-bottom: 25px; /* Espacio antes del botón */
+}
+
+/* Contenedor principal de logos + texto */
+.logos-pago-unificados {
+    display: flex;
+    flex-direction: column; /* Lista vertical para claridad en móvil */
+    gap: 15px; /* Espacio entre métodos de pago */
+    padding-top: 15px;
+    border-top: 1px solid #f9f9f9; /* Línea divisoria sutil */
+}
+
+/* Cada método individual (Logo + Texto) */
+.metodo-item {
+    display: flex;
+    align-items: center; /* Centrado vertical perfecto */
+    gap: 12px; /* Espacio entre el icono y la palabra */
+    cursor: pointer;
+    
+}
+
+/* Tamaño de los iconos controlado */
+.icon-pago {
+    height: 25px; /* Altura sutil, no gigantesca */
+    width: auto;
+}
+
+/* Estilo del texto */
+.metodo-item span {
+    font-size: 0.85rem; /* Tamaño de letra reducido y estético */
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.5px;
+}

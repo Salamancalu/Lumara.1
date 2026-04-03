@@ -15,50 +15,59 @@
 
     <header class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo-area">
+            <a href="index.html" class="logo-area">
                 <img src="imagenes/Logo-lumara.png" alt="Lumara Logo" class="main-logo">
                 <div class="brand-text">
                     <span class="brand-name">Lumara</span>
-                    <span class="slogan main-slogan">LUZ Y AROMA QUE ABRAZAN</span>
+                    <span class="slogan">LUZ Y AROMA QUE ABRAZAN</span>
                 </div>
             </a>
 
-            <button class="hamburger" aria-label="Abrir menú">
+            <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
 
             <nav class="nav-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#catalogo">Colecciones</a>
-                <a href="#pedido">Hacer Pedido</a>
+                <a href="index.html">Inicio</a>
+                <a href="decorativa.html">Decorativa</a> <a href="eventos.html">Eventos</a> <a
+                    href="temporada.html">Temporada</a>
+                <div class="carrito-header-container" id="abrir-carrito">
+                    <a href="#" class="carrito-link">
+                        <svg class="icono-carrito-svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="#4a4a4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span id="contador-carrito" class="contador-badge">0</span>
+                    </a>
+                </div>
+
                 <a href="https://wa.me/573114916142" class="wa-pill" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
                     <span>WhatsApp</span>
                 </a>
+
             </nav>
         </div>
+
     </header>
 
     <section id="inicio" class="hero">
         <div class="hero-content">
             <span class="badge">ARTESANÍA & DISEÑO</span>
             <h1>Luz y Aroma que Abrazan tus Momentos</h1>
-            <p>Velas artesanales con cera de soja premium. Personaliza cada detalle de tu pedido.</p>
+            <p>Nuestros productos están elaborados con cera semivegetal, y algunas de nuestras referencias están hechas
+                con cera 100 % vegetal. Por ello, te garantizamos artículos de alta calidad, pensados para el bienestar
+                y la armonía de tu hogar.</p>
             <div class="hero-btns">
                 <a href="#catalogo" class="btn btn-gold">Explorar Tienda</a>
-                <a href="decorativa.html" class="btn btn-outline">Ir al Pedido</a>
+
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="floating-card main-img">
-                <img src="imagenes/vela-principal.jpeg" alt="Vela Lumara">
-            </div>
-            <div class="floating-card sub-img">
-                <img src="imagenes/detalle-vela.jpeg" alt="Detalle Artesanal">
-            </div>
-        </div>
+
     </section>
 
     <section id="catalogo" class="catalog">
@@ -95,158 +104,23 @@
 
         </div>
     </section>
-    <section id="pedido" class="order-section">
-        <div class="form-container">
-            <div class="form-header">
-                <h2>Formulario de Pedido</h2>
-                <p>¡Cotiza tu pedido aquí! Cada una de nuestras velas se elabora a mano con dedicación.</p>
+
+    <section><a href="todas-las-colecciones.html" class="btn-vertodo">Ver todas las colecciones</a></section>
+
+    <section class="pedido">
+        <div class="container-pedido">
+
+            <h2>Haz tu Pedido Personalizado</h2>
+            <p class="pedido-intro">¿Quieres algo único? Contáctanos para crear tu vela personalizada, perfecta para
+                cualquier ocasión.</p>
+            <div class="formulario-personalizado">
+                <label for="observaciones">Observaciones</label>
+                <textarea id="observaciones" placeholder="Escribe tus observaciones aquí..."></textarea>
+                <button id="btn-whatsapp" class="btn-contactanos">Enviar mensaje</button>
+
             </div>
-
-            <form id="lumara-form"
-                action="https://script.google.com/macros/s/AKfycbyXKoO1j0jB86l4303hx8iAHmaSDSlbwB7p09s8OtyvmfCqDyS-DnFpuV3d4gm1bo3w/exec"
-                method="POST">
-
-                <div class="form-block">
-                    <div class="block-title"><span>1</span> Información Personal</div>
-                    <div class="input-grid">
-                        <div class="field">
-                            <label for="nombre">NOMBRE COMPLETO</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="field">
-                            <label for="whatsapp">WHATSAPP</label>
-                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ej: 311..." required>
-                        </div>
-                        <div class="field">
-                            <label for="direccion">DIRECCIÓN DE ENTREGA</label>
-                            <input type="text" id="direccion" name="direccion" required>
-                        </div>
-                        <div class="field">
-                            <label>¿DESEAS FACTURA ELECTRÓNICA?</label>
-                            <div class="options-group">
-                                <label class="radio-item"><input type="radio" name="factura" value="si">
-                                    <span>SÍ</span></label>
-                                <label class="radio-item"><input type="radio" name="factura" value="no" checked>
-                                    <span>NO</span></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-block">
-                    <div class="block-title"><span>2</span> Selecciona Categoría</div>
-                    <div class="category-selector-grid" id="category-grid">
-                    </div>
-                </div>
-
-                <div id="productos-dinamicos" class="form-block" style="display: none;">
-                    <div class="block-title"><span>3</span> Personaliza tu Selección</div>
-                    <div id="container-subcategorias"></div>
-                </div>
-
-                <div class="form-block">
-                    <div class="block-title"><span>4</span> Observaciones</div>
-                    <textarea name="observaciones" rows="4"
-                        placeholder="Detalles sobre colores, aromas o personalización..."></textarea>
-                </div>
-
-                <div class="form-block payment-block">
-
-                    <div class="block-title">
-                        <span>5</span> Envíos y Métodos de Pago
-                    </div>
-
-                    <div class="shipping-info-wrapper">
-                        <h4 class="sub-block-title">Información de Envío</h4>
-                        <div class="shipping-options-grid">
-
-                            <div class="shipping-card bogota">
-                                <div class="ship-icon">📍</div>
-                                <div class="ship-details">
-                                    <h5>Envío en Bogotá</h5>
-                                    <p class="ship-price">$10.000 <span class="currency">COP</span></p>
-                                    <p class="ship-note">Tarifa Plana</p>
-                                </div>
-                            </div>
-
-                            <div class="shipping-card surroundings">
-                                <div class="ship-icon">🚛</div>
-                                <div class="ship-details">
-                                    <h5>Alrededores</h5>
-                                    <p class="ship-price">Pago Contra Entrega</p>
-                                    <p class="ship-note">Directo a la Transportadora</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <hr class="payment-separator">
-
-                    <div class="payment-methods-wrapper">
-                        <h4 class="sub-block-title">Cuentas para Transferencia</h4>
-
-                        <div class="payment-simple-container">
-                            <div class="payment-row nequi-row">
-                                <div class="bank-brand">
-                                    <img src="imagenes/Nequi.png" alt="Nequi" class="mini-logo">
-                                    <span class="bank-text">NEQUI</span>
-                                </div>
-                                <div class="bank-details">
-                                    <span class="account-num">311 491 6142</span>
-                                    <span class="account-type">NÚMERO DE CUENTA</span>
-                                </div>
-                            </div>
-
-                            <div class="payment-row bancolombia-row">
-                                <div class="bank-brand">
-                                    <img src="imagenes/LogoBancolombia.png" alt="Bancolombia" class="mini-logo">
-                                    <span class="bank-text">BANCOLOMBIA</span>
-                                </div>
-                                <div class="bank-details">
-                                    <span class="account-num">912-049051-40</span>
-                                    <span class="account-type">AHORROS</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p class="final-note">
-                        * Una vez nos comuniquemos contigo confirmaremos tu pedido y método de pago.
-                    </p>
-
-                </div>
-                <div class="form-actions" style="text-align: center;">
-                    <button type="submit" id="submit-btn" class="btn btn-gold"
-                        style="width: 100%; padding: 15px;">ENVIAR PEDIDO</button>
-                </div>
-
-            </form>
         </div>
     </section>
-
-    <div id="modal-resumen" class="modal-overlay"
-        style="display: none; background: rgba(0,0,0,0.6); position: fixed; top: 0; left: 0; width: 100%; height: 100%; justify-content: center; align-items: center; z-index: 1000;">
-        <div class="modal-content"
-            style="background: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;">
-            <h2 style="font-family: 'Playfair Display', serif; color: #b8935a; margin-bottom: 15px;">Resumen de tu
-                Pedido</h2>
-            <div id="resumen-contenido"
-                style="text-align: left; margin-bottom: 20px; font-size: 14px; line-height: 1.6; border-top: 1px solid #eee; padding-top: 15px;">
-            </div>
-            <div style="display: flex; gap: 10px;">
-                <button onclick="cerrarResumen()"
-                    style="flex: 1; padding: 10px; border: 1px solid #ccc; background: white; border-radius: 5px; cursor: pointer;">Editar</button>
-                <button onclick="confirmarYEnviar()" id="btn-confirmar-final"
-                    style="flex: 2; padding: 10px; background: #b8935a; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Confirmar
-                    y Enviar</button>
-            </div>
-        </div>
-    </div>
-
-
-
-    <script src="script.js"></script>
 
     <footer class="footer-lumara">
         <div class="footer-container">
@@ -262,7 +136,7 @@
             <div class="footer-col">
                 <h3>Políticas</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="historia_lumara_candel.pdf" target="_blank">Nosotros</a></li>
                     <li><a href="#">Términos y Condiciones</a></li>
                     <li><a href="#">Envíos y Devoluciones</a></li>
                 </ul>
@@ -271,28 +145,42 @@
             <div class="footer-col">
                 <h3>Ayuda</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Cuidado de Velas</a></li>
+                    <li><a href="Uso y cuidado de tu vela.pdf">Cuidado de Velas</a></li>
                     <li><a href="#">Preguntas Frecuentes</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="https://wa.me/573114916142" target="_blank">Contacto</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h3>Síguenos</h3>
                 <div class="social-row">
-                    <a href="#" class="social-item"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
-                            alt="Instagram"></a>
-                    <a href="https://wa.me/573114916142" class="social-item"><img
-                            src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+                    <a href="https://www.instagram.com/lumara_candel/" class="social-item" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+                    </a>
+                    <a href="https://wa.me/573114916142" class="social-item" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+                    </a>
                     <a href="https://www.facebook.com/TU_PERFIL" class="social-item" target="_blank">
                         <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
                     </a>
 
-                    <a href="https://www.tiktok.com/@TU_USUARIO" class="social-item" target="_blank">
+                    <a href="https://www.tiktok.com/@lumara_candel?_t=ZS-90ZVuOLXbRi&_r=1" class="social-item" target="_blank">
                         <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
                     </a>
                 </div>
-                <p class="location-text">📍 Bogotá, Colombia</p>
+
+
+
+            </div>
+            <div class="map-container">
+                <p class="location-text"> Bogotá, Colombia Carrera 10 d # 34 - 47 sur</p>
+
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps?q=4.5674591,-74.1040473&z=17&hl=es&output=embed"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
         </div>
 
@@ -301,9 +189,33 @@
         </div>
     </footer>
 
+    <div id="carrito-sidebar" class="sidebar-lumara-final">
+        <div class="header-carrito">
+            <h2>TU CARRITO DE COMPRAS</h2>
+            <span id="cerrar-carrito" onclick="toggleCarrito()">&times;</span>
+        </div>
+
+        <div id="lista-carrito">
+        </div>
+
+        <div class="footer-sidebar">
+            <div class="fila-subtotal">
+                <span>Subtotal:</span>
+                <span id="subtotal-valor">$ 0</span>
+            </div>
+            <div class="fila-total">
+                <strong>Total:</strong>
+                <strong id="total-carrito">$ 0</strong>
+            </div>
+            <button type="button" onclick="irAlCheckout()" class="btn-pagar">
+                IR A PAGAR
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-
+    <script src="carrito.js"></script>
+    <script src="checkout.js"></script>
 </body>
 
 </html>
